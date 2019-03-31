@@ -103,7 +103,7 @@ namespace DAL
         }
         public void cancelContract_bySimID()
         {
-            var cancel_contract = db.CONTRACTs.First(p => p.id_sim == contract.id_sim);
+            var cancel_contract = db.CONTRACTs.First(p => p.id_sim == contract.id);
 
             cancel_contract.status = false;
             db.SaveChanges();

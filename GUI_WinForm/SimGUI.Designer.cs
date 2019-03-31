@@ -155,7 +155,7 @@
             // rdbDaSD
             // 
             this.rdbDaSD.AutoSize = true;
-            this.rdbDaSD.Location = new System.Drawing.Point(507, 52);
+            this.rdbDaSD.Location = new System.Drawing.Point(399, 75);
             this.rdbDaSD.Name = "rdbDaSD";
             this.rdbDaSD.Size = new System.Drawing.Size(80, 17);
             this.rdbDaSD.TabIndex = 37;
@@ -168,10 +168,10 @@
             this.rdbChuaSD.Checked = true;
             this.rdbChuaSD.Location = new System.Drawing.Point(399, 52);
             this.rdbChuaSD.Name = "rdbChuaSD";
-            this.rdbChuaSD.Size = new System.Drawing.Size(91, 17);
+            this.rdbChuaSD.Size = new System.Drawing.Size(138, 17);
             this.rdbChuaSD.TabIndex = 36;
             this.rdbChuaSD.TabStop = true;
-            this.rdbChuaSD.Text = "Chưa sử dụng";
+            this.rdbChuaSD.Text = "Chưa sử dụng / Bị khóa";
             this.rdbChuaSD.UseVisualStyleBackColor = true;
             // 
             // txtSDT

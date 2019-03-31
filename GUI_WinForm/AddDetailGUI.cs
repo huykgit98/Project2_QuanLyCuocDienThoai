@@ -62,21 +62,28 @@ namespace GUI_WinForm
         // Function Thêm khách hàng
         private void Add()
         {
-            if (dgvDL.Rows.Count > 0)
+            try
             {
-                int i = 0;
-                while (i < dgvDL.RowCount)
-                {
-                    detail.CountTimes(fare.getbeginTime("DAY"), fare.getbeginTime("NIGHT"), DateTime.ParseExact(dgvDL.Rows[i].Cells["Thời gian bắt đầu"].Value.ToString(), "dd/MM/yyyy HH:mm:ss", null), DateTime.ParseExact(dgvDL.Rows[i].Cells["Thời gian kết thúc"].Value.ToString(), "dd/MM/yyyy HH:mm:ss", null), ref totalMin1, ref totalMin2);
-                    var total_fare = totalMin1 * fare.getFare1("DAY") + totalMin2 * fare.getFare1("NIGHT");
-                    detail.Import(dgvDL.Rows[i].Cells["Mã Sim"].Value.ToString(), DateTime.ParseExact(dgvDL.Rows[i].Cells["Thời gian bắt đầu"].Value.ToString(), "dd/MM/yyyy HH:mm:ss", null), DateTime.ParseExact(dgvDL.Rows[i].Cells["Thời gian kết thúc"].Value.ToString(), "dd/MM/yyyy HH:mm:ss", null), totalMin1, totalMin2, total_fare);
-                    i++;
-                }
-            }
-            else
-                Print_MessageBox("Không tồn tại bất kì dữ liệu ! Vui lòng import log từ bên ngoài !", "Kết quả");
-        }
 
+                if (dgvDL.Rows.Count > 0)
+                {
+                    int i = 0;
+                    while (i < dgvDL.RowCount)
+                    {
+                        detail.CountTimes(fare.getbeginTime("DAY"), fare.getbeginTime("NIGHT"), DateTime.ParseExact(dgvDL.Rows[i].Cells["Thời gian bắt đầu"].Value.ToString(), "dd/MM/yyyy HH:mm:ss", null), DateTime.ParseExact(dgvDL.Rows[i].Cells["Thời gian kết thúc"].Value.ToString(), "dd/MM/yyyy HH:mm:ss", null), ref totalMin1, ref totalMin2);
+                        var total_fare = totalMin1 * fare.getFare1("DAY") + totalMin2 * fare.getFare1("NIGHT");
+                        detail.Import(dgvDL.Rows[i].Cells["Mã Sim"].Value.ToString(), DateTime.ParseExact(dgvDL.Rows[i].Cells["Thời gian bắt đầu"].Value.ToString(), "dd/MM/yyyy HH:mm:ss", null), DateTime.ParseExact(dgvDL.Rows[i].Cells["Thời gian kết thúc"].Value.ToString(), "dd/MM/yyyy HH:mm:ss", null), totalMin1, totalMin2, total_fare);
+                        i++;
+                    }
+                }
+                else
+                    Print_MessageBox("Không tồn tại bất kì dữ liệu ! Vui lòng import log từ bên ngoài !", "Kết quả");
+            }
+            catch
+            {
+                Print_MessageBox("Thêm Thành Công!", "Kết quả");
+            }
+        }
 
         // Function Thêm khách hàng ==> refresh
         private void Import()

@@ -130,6 +130,9 @@ namespace GUI_WinForm
         }
         private void cut()
         {
+            int idx = dgvDSHD.CurrentRow.Index;
+            DateTime d1 = DateTime.Now.Date;
+            DateTime d2 = DateTime.Parse(txtNgayCat.Text);
             if (txtMaHD.Text == null || txtTinhTrang.Text == "Đã thanh toán")
             {
                 Print_MessageBox("Vui lòng chọn hóa đơn hợp lệ để cắt", "Kết quả");
@@ -138,7 +141,7 @@ namespace GUI_WinForm
             {
                 Print_MessageBox("Hợp đồng tương ứng với hóa đơn không hợp lệ và đã bị cắt trước đó", "Kết quả");
             }
-            else if ((DateTime.Now.Date - DateTime.ParseExact(txtNgayCat.Text, "dd/MM/yyyy", null).Date).Days >= 3)
+            else if ((d1-d2).TotalDays >= 3)
             {
                 contractbll.cancelContract_bySimID(txtMaSim.Text);
                 simbll.lockSim(txtMaSim.Text);

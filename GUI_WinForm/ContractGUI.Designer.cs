@@ -47,7 +47,6 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnIn = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.txtTim = new System.Windows.Forms.TextBox();
             this.btnBackHome = new System.Windows.Forms.Button();
@@ -225,23 +224,13 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(259, 94);
+            this.btnRefresh.Location = new System.Drawing.Point(178, 94);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 17;
             this.btnRefresh.Text = "Làm Tươi";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnIn
-            // 
-            this.btnIn.Location = new System.Drawing.Point(178, 94);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(75, 23);
-            this.btnIn.TabIndex = 18;
-            this.btnIn.Text = "In";
-            this.btnIn.UseVisualStyleBackColor = true;
-            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // btnSua
             // 
@@ -262,7 +251,7 @@
             // 
             // btnBackHome
             // 
-            this.btnBackHome.Location = new System.Drawing.Point(346, 94);
+            this.btnBackHome.Location = new System.Drawing.Point(259, 94);
             this.btnBackHome.Name = "btnBackHome";
             this.btnBackHome.Size = new System.Drawing.Size(129, 23);
             this.btnBackHome.TabIndex = 21;
@@ -278,7 +267,6 @@
             this.Controls.Add(this.btnBackHome);
             this.Controls.Add(this.txtTim);
             this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnIn);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnClear);
@@ -328,7 +316,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnIn;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.TextBox txtTim;
         private System.Windows.Forms.Button btnBackHome;
