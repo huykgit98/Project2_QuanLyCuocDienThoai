@@ -33,26 +33,26 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.txtMaHopDong = new System.Windows.Forms.TextBox();
+            this.txtNgayDangKy = new System.Windows.Forms.TextBox();
+            this.txtPhiDK = new System.Windows.Forms.TextBox();
+            this.txtMaSim = new System.Windows.Forms.TextBox();
+            this.btnXem = new System.Windows.Forms.Button();
+            this.rdbHuy = new System.Windows.Forms.RadioButton();
+            this.rbtHoatDong = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.dgvDSHD = new System.Windows.Forms.DataGridView();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnIn = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.txtTim = new System.Windows.Forms.TextBox();
             this.btnBackHome = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -100,70 +100,72 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Ngày Đăng Ký:";
             // 
-            // textBox1
+            // txtMaHopDong
             // 
-            this.textBox1.Location = new System.Drawing.Point(97, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtMaHopDong.Location = new System.Drawing.Point(97, 13);
+            this.txtMaHopDong.Name = "txtMaHopDong";
+            this.txtMaHopDong.ReadOnly = true;
+            this.txtMaHopDong.Size = new System.Drawing.Size(175, 20);
+            this.txtMaHopDong.TabIndex = 5;
             // 
-            // textBox2
+            // txtNgayDangKy
             // 
-            this.textBox2.Location = new System.Drawing.Point(607, 10);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(175, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtNgayDangKy.Location = new System.Drawing.Point(607, 10);
+            this.txtNgayDangKy.Name = "txtNgayDangKy";
+            this.txtNgayDangKy.Size = new System.Drawing.Size(175, 20);
+            this.txtNgayDangKy.TabIndex = 6;
             // 
-            // textBox3
+            // txtPhiDK
             // 
-            this.textBox3.Location = new System.Drawing.Point(97, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(175, 20);
-            this.textBox3.TabIndex = 7;
+            this.txtPhiDK.Location = new System.Drawing.Point(97, 45);
+            this.txtPhiDK.Name = "txtPhiDK";
+            this.txtPhiDK.Size = new System.Drawing.Size(175, 20);
+            this.txtPhiDK.TabIndex = 7;
+            this.txtPhiDK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhiDK_KeyPress);
             // 
-            // textBox4
+            // txtMaSim
             // 
-            this.textBox4.Location = new System.Drawing.Point(319, 12);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(128, 20);
-            this.textBox4.TabIndex = 8;
-            this.textBox4.Text = " ";
+            this.txtMaSim.Location = new System.Drawing.Point(319, 12);
+            this.txtMaSim.Name = "txtMaSim";
+            this.txtMaSim.Size = new System.Drawing.Size(128, 20);
+            this.txtMaSim.TabIndex = 8;
+            this.txtMaSim.Text = " ";
             // 
-            // button1
+            // btnXem
             // 
-            this.button1.Location = new System.Drawing.Point(453, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Xem";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnXem.Location = new System.Drawing.Point(453, 11);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(62, 23);
+            this.btnXem.TabIndex = 9;
+            this.btnXem.Text = "Xem";
+            this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
-            // radioButton1
+            // rdbHuy
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(346, 46);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(42, 17);
-            this.radioButton1.TabIndex = 10;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "hủy";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdbHuy.AutoSize = true;
+            this.rdbHuy.Checked = true;
+            this.rdbHuy.Location = new System.Drawing.Point(346, 46);
+            this.rdbHuy.Name = "rdbHuy";
+            this.rdbHuy.Size = new System.Drawing.Size(42, 17);
+            this.rdbHuy.TabIndex = 10;
+            this.rdbHuy.TabStop = true;
+            this.rdbHuy.Text = "hủy";
+            this.rdbHuy.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbtHoatDong
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(401, 46);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(74, 17);
-            this.radioButton2.TabIndex = 11;
-            this.radioButton2.Text = "hoạt động";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtHoatDong.AutoSize = true;
+            this.rbtHoatDong.Location = new System.Drawing.Point(401, 46);
+            this.rbtHoatDong.Name = "rbtHoatDong";
+            this.rbtHoatDong.Size = new System.Drawing.Size(74, 17);
+            this.rbtHoatDong.TabIndex = 11;
+            this.rbtHoatDong.Text = "hoạt động";
+            this.rbtHoatDong.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgvDSHD);
             this.groupBox1.Location = new System.Drawing.Point(0, 132);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(802, 315);
@@ -171,87 +173,96 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Hợp Đồng";
             // 
-            // dataGridView1
+            // dgvDSHD
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(802, 295);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvDSHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSHD.Location = new System.Drawing.Point(0, 19);
+            this.dgvDSHD.Name = "dgvDSHD";
+            this.dgvDSHD.Size = new System.Drawing.Size(802, 295);
+            this.dgvDSHD.TabIndex = 0;
+            this.dgvDSHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSHD_CellContentClick);
+            this.dgvDSHD.Click += new System.EventHandler(this.dgvDSHD_Click);
             // 
-            // button2
+            // btnThem
             // 
-            this.button2.Location = new System.Drawing.Point(525, 48);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Thêm";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnThem.Location = new System.Drawing.Point(525, 48);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.TabIndex = 13;
+            this.btnThem.Text = "Thêm HĐ";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // button3
+            // btnTim
             // 
-            this.button3.Location = new System.Drawing.Point(707, 94);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Tìm";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnTim.Location = new System.Drawing.Point(707, 94);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(75, 23);
+            this.btnTim.TabIndex = 14;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
-            // button4
+            // btnClear
             // 
-            this.button4.Location = new System.Drawing.Point(607, 48);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "Clear";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnClear.Location = new System.Drawing.Point(607, 48);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 15;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // button5
+            // btnXoa
             // 
-            this.button5.Location = new System.Drawing.Point(97, 94);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Xóa";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnXoa.Location = new System.Drawing.Point(97, 94);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.TabIndex = 16;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // button6
+            // btnRefresh
             // 
-            this.button6.Location = new System.Drawing.Point(259, 94);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "Làm Tươi";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnRefresh.Location = new System.Drawing.Point(259, 94);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 17;
+            this.btnRefresh.Text = "Làm Tươi";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // button7
+            // btnIn
             // 
-            this.button7.Location = new System.Drawing.Point(178, 94);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 18;
-            this.button7.Text = "In";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnIn.Location = new System.Drawing.Point(178, 94);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(75, 23);
+            this.btnIn.TabIndex = 18;
+            this.btnIn.Text = "In";
+            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
-            // button8
+            // btnSua
             // 
-            this.button8.Location = new System.Drawing.Point(688, 48);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 19;
-            this.button8.Text = "Sửa ";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnSua.Location = new System.Drawing.Point(16, 94);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.TabIndex = 19;
+            this.btnSua.Text = "Sửa ";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // textBox5
+            // txtTim
             // 
-            this.textBox5.Location = new System.Drawing.Point(526, 94);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(175, 20);
-            this.textBox5.TabIndex = 20;
+            this.txtTim.Location = new System.Drawing.Point(526, 94);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(175, 20);
+            this.txtTim.TabIndex = 20;
             // 
             // btnBackHome
             // 
-            this.btnBackHome.Location = new System.Drawing.Point(346, 90);
+            this.btnBackHome.Location = new System.Drawing.Point(346, 94);
             this.btnBackHome.Name = "btnBackHome";
             this.btnBackHome.Size = new System.Drawing.Size(129, 23);
             this.btnBackHome.TabIndex = 21;
@@ -265,22 +276,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnBackHome);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.txtTim);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnIn);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnTim);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.rbtHoatDong);
+            this.Controls.Add(this.rdbHuy);
+            this.Controls.Add(this.btnXem);
+            this.Controls.Add(this.txtMaSim);
+            this.Controls.Add(this.txtPhiDK);
+            this.Controls.Add(this.txtNgayDangKy);
+            this.Controls.Add(this.txtMaHopDong);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -288,8 +299,9 @@
             this.Controls.Add(this.label1);
             this.Name = "ContractGUI";
             this.Text = "Hợp Đồng";
+            this.Load += new System.EventHandler(this.ContractGUI_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,23 +314,23 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.TextBox txtMaHopDong;
+        private System.Windows.Forms.TextBox txtNgayDangKy;
+        private System.Windows.Forms.TextBox txtPhiDK;
+        private System.Windows.Forms.TextBox txtMaSim;
+        private System.Windows.Forms.Button btnXem;
+        private System.Windows.Forms.RadioButton rdbHuy;
+        private System.Windows.Forms.RadioButton rbtHoatDong;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.DataGridView dgvDSHD;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnIn;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.TextBox txtTim;
         private System.Windows.Forms.Button btnBackHome;
     }
 }

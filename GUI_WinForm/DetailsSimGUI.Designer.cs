@@ -32,12 +32,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.txtMaSim = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtMaKH = new System.Windows.Forms.TextBox();
+            this.btnXem = new System.Windows.Forms.Button();
+            this.rbtChuaSD = new System.Windows.Forms.RadioButton();
+            this.rbtDaSD = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -61,7 +61,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(253, 29);
+            this.label3.Location = new System.Drawing.Point(264, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 2;
@@ -76,78 +76,83 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "SĐT:";
             // 
-            // textBox1
+            // txtMaSim
             // 
-            this.textBox1.Location = new System.Drawing.Point(74, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(173, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtMaSim.Location = new System.Drawing.Point(74, 29);
+            this.txtMaSim.Name = "txtMaSim";
+            this.txtMaSim.ReadOnly = true;
+            this.txtMaSim.Size = new System.Drawing.Size(173, 20);
+            this.txtMaSim.TabIndex = 4;
             // 
-            // textBox3
+            // txtSDT
             // 
-            this.textBox3.Location = new System.Drawing.Point(74, 80);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(173, 20);
-            this.textBox3.TabIndex = 6;
+            this.txtSDT.Location = new System.Drawing.Point(74, 80);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.ReadOnly = true;
+            this.txtSDT.Size = new System.Drawing.Size(173, 20);
+            this.txtSDT.TabIndex = 6;
             // 
-            // textBox4
+            // txtMaKH
             // 
-            this.textBox4.Location = new System.Drawing.Point(316, 26);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(173, 20);
-            this.textBox4.TabIndex = 7;
+            this.txtMaKH.Location = new System.Drawing.Point(316, 26);
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.ReadOnly = true;
+            this.txtMaKH.Size = new System.Drawing.Size(173, 20);
+            this.txtMaKH.TabIndex = 7;
             // 
-            // button1
+            // btnXem
             // 
-            this.button1.Location = new System.Drawing.Point(496, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Xem";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnXem.Location = new System.Drawing.Point(496, 25);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(53, 23);
+            this.btnXem.TabIndex = 8;
+            this.btnXem.Text = "Xem";
+            this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
-            // radioButton1
+            // rbtChuaSD
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(316, 81);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(91, 17);
-            this.radioButton1.TabIndex = 9;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Chưa sử dụng";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtChuaSD.AutoSize = true;
+            this.rbtChuaSD.Checked = true;
+            this.rbtChuaSD.Enabled = false;
+            this.rbtChuaSD.Location = new System.Drawing.Point(316, 81);
+            this.rbtChuaSD.Name = "rbtChuaSD";
+            this.rbtChuaSD.Size = new System.Drawing.Size(91, 17);
+            this.rbtChuaSD.TabIndex = 9;
+            this.rbtChuaSD.TabStop = true;
+            this.rbtChuaSD.Text = "Chưa sử dụng";
+            this.rbtChuaSD.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbtDaSD
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(422, 81);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(80, 17);
-            this.radioButton2.TabIndex = 10;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Đã sử dụng";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtDaSD.AutoSize = true;
+            this.rbtDaSD.Enabled = false;
+            this.rbtDaSD.Location = new System.Drawing.Point(422, 81);
+            this.rbtDaSD.Name = "rbtDaSD";
+            this.rbtDaSD.Size = new System.Drawing.Size(80, 17);
+            this.rbtDaSD.TabIndex = 10;
+            this.rbtDaSD.TabStop = true;
+            this.rbtDaSD.Text = "Đã sử dụng";
+            this.rbtDaSD.UseVisualStyleBackColor = true;
             // 
             // DetailsSimGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 126);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.rbtDaSD);
+            this.Controls.Add(this.rbtChuaSD);
+            this.Controls.Add(this.btnXem);
+            this.Controls.Add(this.txtMaKH);
+            this.Controls.Add(this.txtSDT);
+            this.Controls.Add(this.txtMaSim);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "DetailsSimGUI";
             this.Text = "Chi Tiết Sim";
+            this.Load += new System.EventHandler(this.DetailsSimGUI_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,11 +164,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.TextBox txtMaSim;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtMaKH;
+        private System.Windows.Forms.Button btnXem;
+        private System.Windows.Forms.RadioButton rbtChuaSD;
+        private System.Windows.Forms.RadioButton rbtDaSD;
     }
 }

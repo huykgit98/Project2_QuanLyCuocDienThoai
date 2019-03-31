@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBackHome = new System.Windows.Forms.Button();
             this.txtRefresh = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.txtTGKT = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDSCP = new System.Windows.Forms.DataGridView();
-            this.btnBackHome = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSCP)).BeginInit();
@@ -66,6 +66,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cước Phí";
+            // 
+            // btnBackHome
+            // 
+            this.btnBackHome.Location = new System.Drawing.Point(12, 118);
+            this.btnBackHome.Name = "btnBackHome";
+            this.btnBackHome.Size = new System.Drawing.Size(116, 23);
+            this.btnBackHome.TabIndex = 13;
+            this.btnBackHome.Text = "Về Màn Hình Chính";
+            this.btnBackHome.UseVisualStyleBackColor = true;
+            this.btnBackHome.Click += new System.EventHandler(this.btnBackHome_Click);
             // 
             // txtRefresh
             // 
@@ -168,17 +178,8 @@
             this.dgvDSCP.Name = "dgvDSCP";
             this.dgvDSCP.Size = new System.Drawing.Size(786, 267);
             this.dgvDSCP.TabIndex = 0;
+            this.dgvDSCP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSCP_CellContentClick);
             this.dgvDSCP.Click += new System.EventHandler(this.dgvDSCP_Click);
-            // 
-            // btnBackHome
-            // 
-            this.btnBackHome.Location = new System.Drawing.Point(12, 118);
-            this.btnBackHome.Name = "btnBackHome";
-            this.btnBackHome.Size = new System.Drawing.Size(116, 23);
-            this.btnBackHome.TabIndex = 13;
-            this.btnBackHome.Text = "Về Màn Hình Chính";
-            this.btnBackHome.UseVisualStyleBackColor = true;
-            this.btnBackHome.Click += new System.EventHandler(this.btnBackHome_Click);
             // 
             // FareGUI
             // 

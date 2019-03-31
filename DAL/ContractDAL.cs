@@ -14,7 +14,7 @@ namespace DAL
         CONTRACT contract = new CONTRACT();
         public void setCONTRACT(String sim_id, DateTime date, int? fee, bool status)
         {
-            this.contract.id = sim_id;
+            this.contract.id_sim = sim_id;
             this.contract.fee = fee;
             this.contract.date_register = date;
             this.contract.status = status;

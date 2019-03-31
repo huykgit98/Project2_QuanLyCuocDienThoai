@@ -91,5 +91,10 @@ namespace GUI_WinForm
             refresh();
 
         }
+
+        private void dgvDSCP_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

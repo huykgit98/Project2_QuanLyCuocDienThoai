@@ -29,22 +29,21 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dgvDSKH = new System.Windows.Forms.DataGridView();
+            this.btnTimKH = new System.Windows.Forms.Button();
+            this.txtTimKH = new System.Windows.Forms.TextBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThemKH = new System.Windows.Forms.Button();
+            this.txtNgheNghiep = new System.Windows.Forms.TextBox();
+            this.txtChucVu = new System.Windows.Forms.TextBox();
+            this.txtTenKH = new System.Windows.Forms.TextBox();
+            this.txtCMND = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtIDKH = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,12 +53,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnBackHome = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSKH)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvDSKH);
             this.groupBox2.Location = new System.Drawing.Point(3, 196);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(796, 253);
@@ -67,133 +66,132 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Khách Hàng";
             // 
-            // dataGridView1
+            // dgvDSKH
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(796, 234);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvDSKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSKH.Location = new System.Drawing.Point(0, 19);
+            this.dgvDSKH.Name = "dgvDSKH";
+            this.dgvDSKH.Size = new System.Drawing.Size(796, 234);
+            this.dgvDSKH.TabIndex = 0;
+            this.dgvDSKH.Click += new System.EventHandler(this.dgvDSKH_Click);
             // 
-            // button7
+            // btnTimKH
             // 
-            this.button7.Location = new System.Drawing.Point(712, 122);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 43;
-            this.button7.Text = "Tìm";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnTimKH.Location = new System.Drawing.Point(712, 122);
+            this.btnTimKH.Name = "btnTimKH";
+            this.btnTimKH.Size = new System.Drawing.Size(75, 23);
+            this.btnTimKH.TabIndex = 43;
+            this.btnTimKH.Text = "Tìm";
+            this.btnTimKH.UseVisualStyleBackColor = true;
+            this.btnTimKH.Click += new System.EventHandler(this.btnTimKH_Click);
             // 
-            // textBox8
+            // txtTimKH
             // 
-            this.textBox8.Location = new System.Drawing.Point(511, 125);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(195, 20);
-            this.textBox8.TabIndex = 42;
+            this.txtTimKH.Location = new System.Drawing.Point(511, 125);
+            this.txtTimKH.Name = "txtTimKH";
+            this.txtTimKH.Size = new System.Drawing.Size(195, 20);
+            this.txtTimKH.TabIndex = 42;
             // 
-            // button6
+            // btnRefresh
             // 
-            this.button6.Location = new System.Drawing.Point(350, 122);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 41;
-            this.button6.Text = "Refresh";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnRefresh.Location = new System.Drawing.Point(258, 122);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 41;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // button5
+            // btnClear
             // 
-            this.button5.Location = new System.Drawing.Point(684, 62);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 40;
-            this.button5.Text = "Clear";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnClear.Location = new System.Drawing.Point(665, 69);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 40;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // button4
+            // btnXoa
             // 
-            this.button4.Location = new System.Drawing.Point(260, 122);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 39;
-            this.button4.Text = "In";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnXoa.Location = new System.Drawing.Point(177, 122);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.TabIndex = 38;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // button3
+            // btnSua
             // 
-            this.button3.Location = new System.Drawing.Point(177, 122);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 38;
-            this.button3.Text = "Xóa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSua.Location = new System.Drawing.Point(96, 122);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.TabIndex = 37;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // button2
+            // btnThemKH
             // 
-            this.button2.Location = new System.Drawing.Point(96, 122);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "Sửa";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnThemKH.Location = new System.Drawing.Point(584, 68);
+            this.btnThemKH.Name = "btnThemKH";
+            this.btnThemKH.Size = new System.Drawing.Size(75, 23);
+            this.btnThemKH.TabIndex = 36;
+            this.btnThemKH.Text = "Thêm";
+            this.btnThemKH.UseVisualStyleBackColor = true;
+            this.btnThemKH.Click += new System.EventHandler(this.btnThemKH_Click);
             // 
-            // button1
+            // txtNgheNghiep
             // 
-            this.button1.Location = new System.Drawing.Point(584, 62);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtNgheNghiep.Location = new System.Drawing.Point(90, 42);
+            this.txtNgheNghiep.Name = "txtNgheNghiep";
+            this.txtNgheNghiep.Size = new System.Drawing.Size(195, 20);
+            this.txtNgheNghiep.TabIndex = 35;
             // 
-            // textBox7
+            // txtChucVu
             // 
-            this.textBox7.Location = new System.Drawing.Point(90, 42);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(195, 20);
-            this.textBox7.TabIndex = 35;
+            this.txtChucVu.Location = new System.Drawing.Point(90, 69);
+            this.txtChucVu.Name = "txtChucVu";
+            this.txtChucVu.Size = new System.Drawing.Size(195, 20);
+            this.txtChucVu.TabIndex = 34;
             // 
-            // textBox6
+            // txtTenKH
             // 
-            this.textBox6.Location = new System.Drawing.Point(90, 69);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(195, 20);
-            this.textBox6.TabIndex = 34;
+            this.txtTenKH.Location = new System.Drawing.Point(350, 15);
+            this.txtTenKH.Name = "txtTenKH";
+            this.txtTenKH.Size = new System.Drawing.Size(206, 20);
+            this.txtTenKH.TabIndex = 33;
             // 
-            // textBox5
+            // txtCMND
             // 
-            this.textBox5.Location = new System.Drawing.Point(350, 15);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(206, 20);
-            this.textBox5.TabIndex = 33;
+            this.txtCMND.Location = new System.Drawing.Point(350, 42);
+            this.txtCMND.Name = "txtCMND";
+            this.txtCMND.Size = new System.Drawing.Size(206, 20);
+            this.txtCMND.TabIndex = 32;
+            this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCMND_KeyPress);
             // 
-            // textBox4
+            // txtEmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(350, 42);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(206, 20);
-            this.textBox4.TabIndex = 32;
+            this.txtEmail.Location = new System.Drawing.Point(622, 15);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(165, 20);
+            this.txtEmail.TabIndex = 31;
             // 
-            // textBox3
+            // txtDiaChi
             // 
-            this.textBox3.Location = new System.Drawing.Point(622, 15);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(165, 20);
-            this.textBox3.TabIndex = 31;
+            this.txtDiaChi.Location = new System.Drawing.Point(350, 68);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(206, 20);
+            this.txtDiaChi.TabIndex = 30;
             // 
-            // textBox2
+            // txtIDKH
             // 
-            this.textBox2.Location = new System.Drawing.Point(350, 68);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(206, 20);
-            this.textBox2.TabIndex = 30;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(90, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(195, 20);
-            this.textBox1.TabIndex = 29;
+            this.txtIDKH.Location = new System.Drawing.Point(90, 19);
+            this.txtIDKH.Name = "txtIDKH";
+            this.txtIDKH.ReadOnly = true;
+            this.txtIDKH.Size = new System.Drawing.Size(195, 20);
+            this.txtIDKH.TabIndex = 29;
             // 
             // label7
             // 
@@ -262,7 +260,7 @@
             // 
             this.btnBackHome.Location = new System.Drawing.Point(96, 162);
             this.btnBackHome.Name = "btnBackHome";
-            this.btnBackHome.Size = new System.Drawing.Size(242, 23);
+            this.btnBackHome.Size = new System.Drawing.Size(237, 23);
             this.btnBackHome.TabIndex = 44;
             this.btnBackHome.Text = "Về Màn Hình Chính";
             this.btnBackHome.UseVisualStyleBackColor = true;
@@ -274,33 +272,33 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnBackHome);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.btnTimKH);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.txtTimKH);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSua);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnThemKH);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtNgheNghiep);
+            this.Controls.Add(this.txtIDKH);
+            this.Controls.Add(this.txtChucVu);
+            this.Controls.Add(this.txtDiaChi);
+            this.Controls.Add(this.txtTenKH);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtCMND);
             this.Name = "CustomerGUI";
             this.Text = "Quản Lý Khách Hàng";
+            this.Load += new System.EventHandler(this.CustomerGUI_Load);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSKH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,22 +306,21 @@
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dgvDSKH;
+        private System.Windows.Forms.Button btnTimKH;
+        private System.Windows.Forms.TextBox txtTimKH;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnThemKH;
+        private System.Windows.Forms.TextBox txtNgheNghiep;
+        private System.Windows.Forms.TextBox txtChucVu;
+        private System.Windows.Forms.TextBox txtTenKH;
+        private System.Windows.Forms.TextBox txtCMND;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.TextBox txtIDKH;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

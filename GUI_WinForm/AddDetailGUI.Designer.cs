@@ -28,70 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvDL = new System.Windows.Forms.DataGridView();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnImportDL = new System.Windows.Forms.Button();
+            this.btnLamLai = new System.Windows.Forms.Button();
+            this.btnThemvaDong = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDL)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvDL
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 72);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(537, 306);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvDL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDL.Location = new System.Drawing.Point(1, 72);
+            this.dgvDL.Name = "dgvDL";
+            this.dgvDL.Size = new System.Drawing.Size(537, 306);
+            this.dgvDL.TabIndex = 0;
             // 
-            // button1
+            // btnThem
             // 
-            this.button1.Location = new System.Drawing.Point(13, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnThem.Location = new System.Drawing.Point(13, 13);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.TabIndex = 1;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // button2
+            // btnImportDL
             // 
-            this.button2.Location = new System.Drawing.Point(106, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Import Dữ Liệu";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnImportDL.Location = new System.Drawing.Point(205, 13);
+            this.btnImportDL.Name = "btnImportDL";
+            this.btnImportDL.Size = new System.Drawing.Size(114, 23);
+            this.btnImportDL.TabIndex = 2;
+            this.btnImportDL.Text = "Import Dữ Liệu";
+            this.btnImportDL.UseVisualStyleBackColor = true;
+            this.btnImportDL.Click += new System.EventHandler(this.btnImportDL_Click);
             // 
-            // button3
+            // btnLamLai
             // 
-            this.button3.Location = new System.Drawing.Point(247, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Làm Lại";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnLamLai.Location = new System.Drawing.Point(325, 12);
+            this.btnLamLai.Name = "btnLamLai";
+            this.btnLamLai.Size = new System.Drawing.Size(75, 23);
+            this.btnLamLai.TabIndex = 3;
+            this.btnLamLai.Text = "Làm Lại";
+            this.btnLamLai.UseVisualStyleBackColor = true;
+            this.btnLamLai.Click += new System.EventHandler(this.btnLamLai_Click);
+            // 
+            // btnThemvaDong
+            // 
+            this.btnThemvaDong.Location = new System.Drawing.Point(94, 13);
+            this.btnThemvaDong.Name = "btnThemvaDong";
+            this.btnThemvaDong.Size = new System.Drawing.Size(88, 23);
+            this.btnThemvaDong.TabIndex = 4;
+            this.btnThemvaDong.Text = "Thêm và Đóng";
+            this.btnThemvaDong.UseVisualStyleBackColor = true;
+            this.btnThemvaDong.Click += new System.EventHandler(this.btnThemvaDong_Click);
             // 
             // AddDetailGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 379);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnThemvaDong);
+            this.Controls.Add(this.btnLamLai);
+            this.Controls.Add(this.btnImportDL);
+            this.Controls.Add(this.btnThem);
+            this.Controls.Add(this.dgvDL);
             this.Name = "AddDetailGUI";
             this.Text = "Thêm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.AddDetailGUI_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDL)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView dgvDL;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnImportDL;
+        private System.Windows.Forms.Button btnLamLai;
+        private System.Windows.Forms.Button btnThemvaDong;
     }
 }

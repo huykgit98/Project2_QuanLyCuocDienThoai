@@ -106,9 +106,8 @@ namespace DAL
         public void Update_id_cus()
         {
             var edited_sim = db.SIMs.First(p => p.id == sim.id);
-            edited_sim.status = this.sim.status;
             edited_sim.id_cus = this.sim.id_cus;
-
+            edited_sim.status = this.sim.status;
             db.SaveChanges();
             db.Entry(sim).State = EntityState.Detached;
         }
