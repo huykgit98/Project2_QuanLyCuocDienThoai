@@ -65,8 +65,8 @@ namespace GUI_WinForm
             //    dgvCTSD.Rows[i].Cells[2].Value = dgvCTSD.Rows[i].Cells[2].Value.ToString();
             //}
             dgvCTSD.Columns[3].HeaderText = "Thời Gian Kết Thúc";
-            dgvCTSD.Columns[4].HeaderText = "Số phút trong khung giờ chính";
-            dgvCTSD.Columns[5].HeaderText = "Số phút trong khung giờ phụ";
+            dgvCTSD.Columns[4].HeaderText = "Số phút khung giờ chính";
+            dgvCTSD.Columns[5].HeaderText = "Số phút khung giờ phụ";
             dgvCTSD.Columns[6].HeaderText = "Tổng giá cước";
             dgvCTSD.Columns[7].Visible = false;
         }

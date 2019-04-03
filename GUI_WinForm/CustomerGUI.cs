@@ -66,11 +66,18 @@ namespace GUI_WinForm
 
         private void btnThemKH_Click(object sender, EventArgs e)
         {
-            
+               // if(txtTenKH.Text=="" || txtCMND.Text == "" || txtNgheNghiep.Text=="" || txtChucVu.Text=="" || txtDiaChi.Text=="" ||txtEmail.Text=="") {
+
+            //}
+            try{
                 var result = customer.Create(txtTenKH.Text, Convert.ToInt32(txtCMND.Text), txtNgheNghiep.Text, txtChucVu.Text, txtDiaChi.Text, txtEmail.Text);
                 Print_MessageBox(result, "Thông báo thêm");
                 loadDataTable();
-
+            }
+            catch
+            {
+                Print_MessageBox("Vui lòng nhập đầy đủ thông tin khách hàng!", "Kết quả");
+            }
 
         }
 
@@ -142,10 +149,15 @@ namespace GUI_WinForm
         }
         private void edit()
         {
-            var result = customers.Update(txtIDKH.Text, txtTenKH.Text, Convert.ToInt32(txtCMND.Text), txtNgheNghiep.Text, txtChucVu.Text, txtDiaChi.Text, txtEmail.Text);
-            Print_MessageBox(result, "Thông báo sửa");
-            dgvDSKH.DataSource = new BindingSource(customers.GetAll(), "");
-        }
+            try
+            {
+                var result = customers.Update(txtIDKH.Text, txtTenKH.Text, Convert.ToInt32(txtCMND.Text), txtNgheNghiep.Text, txtChucVu.Text, txtDiaChi.Text, txtEmail.Text);
+                Print_MessageBox(result, "Thông báo sửa");
+                dgvDSKH.DataSource = new BindingSource(customers.GetAll(), "");
+
+            }
+            catch { }
+            }
         private void delete()
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn xóa không ?", "Thông báo xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Information);

@@ -100,10 +100,10 @@ namespace GUI_WinForm
             dgvDSSim.Columns[1].HeaderText = "Mã khách hàng";
 
             dgvDSSim.Columns[2].HeaderText = "Số điện thoại";
-            //for (int i = 0; i < dgvDSSim.Rows.Count - 1; i++)
-            //{
-            //    dgvDSSim.Rows[i].Cells[2].Value = dgvDSSim.Rows[i].Cells[2].Value.ToString();
-            //}
+            for (int i = 0; i < dgvDSSim.Rows.Count - 1; i++)
+            {
+                dgvDSSim.Rows[i].Cells[2].Value =String.Format("0"+dgvDSSim.Rows[i].Cells[2].Value.ToString());
+            }
             dgvDSSim.Columns[3].HeaderText = "Tình Trạng";
             dgvDSSim.Columns[4].Visible = false;
             dgvDSSim.Columns[5].Visible = false;
@@ -178,13 +178,17 @@ namespace GUI_WinForm
         //Functio sửa row
         private void edit()
         {
-            bool status = true;
-            if (rdbChuaSD.Checked==true)
-                status = false;
-            if (rdbDaSD.Checked == true)
-                status = true;
-            string result = simbll.Update(txtMaSim.Text, txtMaKH.Text, Convert.ToInt32(txtSDT.Text), status);
-            Print_MessageBox(result, "Thông báo sửa");
+            try
+            {
+                bool status = true;
+                if (rdbChuaSD.Checked == true)
+                    status = false;
+                if (rdbDaSD.Checked == true)
+                    status = true;
+                string result = simbll.Update(txtMaSim.Text, txtMaKH.Text, Convert.ToInt32(txtSDT.Text), status);
+                Print_MessageBox(result, "Thông báo sửa");
+            }
+            catch { }
         }
 
         // Function delete row

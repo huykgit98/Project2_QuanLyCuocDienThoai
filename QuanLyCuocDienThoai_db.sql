@@ -133,3 +133,10 @@ INSERT INTO FARE VALUES('NIGHT','23:00','7:00',150);
 
 INSERT INTO DETAIL VALUES('S01','6/12/2018 8:23','6/12/2018 9:21',58,0,61000);
 Delete from DETAIL
+Delete from SIM
+Delete from CONTRACT
+Delete from BILL
+
+select * from SIM
+select * from BILL
+select BILL.id,SIM.phone, BILL.date_export, BILL.date_cut, BILL.postage, BILL.fare, BILL.status, CUSTOMER.name_cus, CUSTOMER.email from BILL, SIM, CUSTOMER where SIM.phone ='92356874'

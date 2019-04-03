@@ -84,14 +84,18 @@ namespace DAL
         }
         public void Pay()
         {
-            var edited_bill = db.BILLs.First(p => p.id == bill.id);
+            try {
+                var edited_bill = db.BILLs.First(p => p.id == bill.id);
 
-            edited_bill.status = true;
+                edited_bill.status = true;
 
-            db.SaveChanges();
+                db.SaveChanges();
 
-            db.Entry(bill).State = EntityState.Detached;
-        }
+                db.Entry(bill).State = EntityState.Detached;
+            }
+            catch { }
+            
+            }
         public bool checkIfExist()
         {
             return db.BILLs.Any(b => b.id == bill.id && b.date_export.Value.Month == bill.date_export.Value.Month && b.date_export.Value.Year == bill.date_export.Value.Year);
@@ -107,13 +111,13 @@ namespace DAL
             return null;
         }
 
-        // Function Gửi thông báo cước phí hàng tháng cho khách hàng khi tạo bill
+        // Gửi thông báo cước phí hàng tháng cho khách hàng khi tạo bill
         public bool SendBillByEmail(string toMail, string name_customer)
         {
-            MailMessage mail = new MailMessage("min.lee397@gmail.com", toMail);
+            MailMessage mail = new MailMessage("huykgit1998@gmail.com", toMail);
             SmtpClient client = new SmtpClient();
             client.Port = 587;
-            client.Credentials = new System.Net.NetworkCredential("min.lee397@gmail.com", "ypsnmvugzqedeqdw");
+            client.Credentials = new System.Net.NetworkCredential("huykgit1998@gmail.com", "Huy3612380");
             client.EnableSsl = true;
             client.Host = "smtp.gmail.com";
             mail.Subject = "Thông báo cước tháng - Dịch vụ cước điện thoại GTHD";
@@ -130,7 +134,6 @@ namespace DAL
 				        <p>
 					        <strong>Kính gửi: " + name_customer + @"</strong>
 					        <br /> 
-					        Quý khách đã sử dụng dịch vụ cước điện thoại tới tháng 08 năm 2018, xin quý khách vui lòng đến dịch vụ của chúng tôi để thanh toán cước điện thoại từ tháng 07 năm 2018 đến tháng 08 năm 2018 để tiếp tục sử dụng dịch vụ cước điện thoại của chúng tôi.	
 				        </p>
 			        </div>
 			        <div style='float:left; width:100%; padding: 2% 2%;'>
@@ -150,7 +153,7 @@ namespace DAL
 				        </table>			
 			        </div>
 			        <div style='float:left; width:100%; padding: 2% 0%;' background-color:#ffffff; font-weight: bold;'>
-				        Nếu quý khách có thắc mắc vấn đề gì có thể liên hệ qua <span style='color: #cc0000'> 0764553313 </span>. hoặc có thể đi tới địa chỉ của dịch vụ chúng ta.
+				        Nếu quý khách có thắc mắc vấn đề gì có thể liên hệ qua <span style='color: #cc0000'> 0387134747 (huy nguyen) </span>. hoặc có thể đi tới địa chỉ của dịch vụ chúng ta.
 			        </div>
 			        <div style='float:left; width:100%; padding: 2% 0%;' background-color:#ffffff;'>
 				        Thân trọng kính chào ! <br />
@@ -161,7 +164,7 @@ namespace DAL
 			        <div style='float:left; width:3%;'>
 				        <img width='20' height='20' src='https://lh3.googleusercontent.com/-Bl9Q-InF8O0/XAvv_Ihbg4I/AAAAAAAAB60/aniY2GoNQDgJkIFjj0zRyrzOfjSW2-gWwCL0BGAs/w530-d-h530-n-rw/call.png' />
 			        </div>
-			        <div style='float:left; width:50%; padding-top: 0.2%; color: white'>Thiết kế bởi minlee</div>
+			        <div style='float:left; width:50%; padding-top: 0.2%; color: white'>Nhóm 04 MHPL</div>
 		        </div>	
 	        </div>";
 

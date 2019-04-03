@@ -83,9 +83,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(43, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Ngày Lập Phiếu:";
+            this.label3.Text = "Ngày tính:";
             // 
             // label4
             // 
@@ -166,6 +166,7 @@
             // 
             this.txtMaSim.Location = new System.Drawing.Point(487, 10);
             this.txtMaSim.Name = "txtMaSim";
+            this.txtMaSim.ReadOnly = true;
             this.txtMaSim.Size = new System.Drawing.Size(253, 20);
             this.txtMaSim.TabIndex = 12;
             // 
@@ -300,6 +301,7 @@
             this.dgvDSHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSHD.Location = new System.Drawing.Point(0, 45);
             this.dgvDSHD.Name = "dgvDSHD";
+            this.dgvDSHD.ReadOnly = true;
             this.dgvDSHD.Size = new System.Drawing.Size(792, 192);
             this.dgvDSHD.TabIndex = 26;
             this.dgvDSHD.Click += new System.EventHandler(this.dgvDSHD_Click);

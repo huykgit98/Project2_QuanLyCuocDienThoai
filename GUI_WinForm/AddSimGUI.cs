@@ -81,16 +81,23 @@ namespace GUI_WinForm
         // Function Thêm khách hàng
         private void Add()
         {
-            string result;
-            
-            bool status = true;
-            if (rdbChuaSD.Checked == true)
-                status = false;
-            else
-                status = true;
-           
-            result = simbll.Create(txtMaKH.Text, Convert.ToInt32(txtSDTKH.Text), status); 
-            Print_MessageBox(result, "Thông báo thêm");
+            try
+            {
+                string result;
+
+                bool status = true;
+                if (rdbChuaSD.Checked == true)
+                    status = false;
+                else
+                    status = true;
+
+                result = simbll.Create(txtMaKH.Text, Convert.ToInt32(txtSDTKH.Text), status);
+                Print_MessageBox(result, "Thông báo thêm");
+            }
+            catch
+            {
+                Print_MessageBox("Vui lòng nhập đầy đủ thông tin!", "Kết quả");
+            }
         }
 
         // Function Thêm khách hàng ==> close

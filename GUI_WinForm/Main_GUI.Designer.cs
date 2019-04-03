@@ -34,7 +34,6 @@
             this.btnQLHopDong = new System.Windows.Forms.Button();
             this.btnQLSim = new System.Windows.Forms.Button();
             this.btnPhatSinhLog = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lbl_time = new System.Windows.Forms.Label();
             this.btnQLFare = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -99,13 +98,6 @@
             this.btnPhatSinhLog.UseVisualStyleBackColor = true;
             this.btnPhatSinhLog.Click += new System.EventHandler(this.btnPhatSinhLog_Click);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(427, 241);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 6;
-            // 
             // lbl_time
             // 
             this.lbl_time.AutoSize = true;
@@ -131,7 +123,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnQLFare);
             this.Controls.Add(this.lbl_time);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnPhatSinhLog);
             this.Controls.Add(this.btnQLSim);
             this.Controls.Add(this.btnQLHopDong);
@@ -154,7 +145,6 @@
         private System.Windows.Forms.Button btnQLHopDong;
         private System.Windows.Forms.Button btnQLSim;
         private System.Windows.Forms.Button btnPhatSinhLog;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lbl_time;
         private System.Windows.Forms.Button btnQLFare;
     }

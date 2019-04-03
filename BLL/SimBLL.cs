@@ -10,6 +10,7 @@ namespace BLL
         SimDAL sim_dal = new SimDAL();
         public IEnumerable<SIM> GetAll()
         {
+            
             return sim_dal.GetAll();
         }
         public string[] GetAll_Array()

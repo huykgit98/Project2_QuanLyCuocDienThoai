@@ -34,7 +34,7 @@ namespace GUI_WinForm
         }
         private void btnPhatSinhLog_Click(object sender, EventArgs e)
         {
-            DateTime t1 = DateTime.Now.AddYears(-2);
+            DateTime t1 = DateTime.Now.AddMonths(-6);
 
             SaveFileDialog savefile = new SaveFileDialog();
 

@@ -115,7 +115,7 @@ namespace GUI_WinForm
             dgvDSHD.Columns[0].HeaderText = "Mã Hóa Đơn";
             dgvDSHD.Columns[1].HeaderText = "Mã Sim";
 
-            dgvDSHD.Columns[2].HeaderText = "Ngày Xuất Phiếu";
+            dgvDSHD.Columns[2].HeaderText = "Ngày Tính";
 
             dgvDSHD.Columns[3].HeaderText = "Ngày Cắt";
             dgvDSHD.Columns[4].HeaderText = "Cước Thuê Bao";
@@ -141,14 +141,28 @@ namespace GUI_WinForm
             {
                 Print_MessageBox("Hợp đồng tương ứng với hóa đơn không hợp lệ và đã bị cắt trước đó", "Kết quả");
             }
-            else if ((d1-d2).TotalDays >= 3)
+            else if ((d1 - d2).TotalDays >= 3)
             {
-                contractbll.cancelContract_bySimID(txtMaSim.Text);
-                simbll.lockSim(txtMaSim.Text);
-                Print_MessageBox("Đã cắt hóa đơn và hợp đồng tương ứng", "Kết quả");
+                try
+                {
+
+                    contractbll.cancelContract_bySimID(txtMaSim.Text);
+                    //lỗi do chưa tạo hợp đồng giữa sim và  khách hàng (thêm hợp đồng trước nhé)
+                    simbll.lockSim(txtMaSim.Text);
+                    Print_MessageBox("Đã cắt hóa đơn và hợp đồng tương ứng", "Kết quả");
+                }
+                
+                catch
+            {
+                Print_MessageBox("Sim chưa có hợp đồng không thể cắt!", "Kết quả");
+
             }
+            }
+            else Print_MessageBox("Chưa đủ ngày để có thể cắt hóa đơn!", "Kết quả");
+
+
         }
-        
+
         private void clear()
         {
             txtMaHD.Text = txtTinhTrang.Text = txtPhutSuDung.Text = txtNgayCat.Text = txtMaSim.Text = txtPhiThueBao.Text = txtNgayLapPhieu.Text = "";

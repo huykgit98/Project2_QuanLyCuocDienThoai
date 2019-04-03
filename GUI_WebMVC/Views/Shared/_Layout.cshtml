@@ -23,28 +23,29 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    
+                    
                 </ul>
+                @using (Html.BeginForm("Index", "BILL", FormMethod.Get, new { @class = "navbar-form navbar-right", role = "search", id = "search-form" }))
+                {
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nhập sdt or email để tìm hóa đơn" name="SearchTerm" value="@ViewBag.SearchTerm" id="search-box">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default hidden-xs"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                }
             </div>
         </div>
     </div>
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
-                <li class="sidebar-search">
-                    <div class="input-group custom-search-form">
-                        <input type="text" class="form-control" placeholder="Tìm kiếm ...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                Tìm
-                            </button>
-                        </span>
-                    </div>
-                    <!-- /input-group -->
-                </li>
+                
                 <li>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="@Url.Action("Index","DETAIL", new { id = Session["Email"] + "/" })">Tra cước</a>
+                            <a href="@Url.Action("Index","DETAILS", new { id = Session["Email"] + "/" })">Tra cước</a>
                         </li>
                         <li>
                             <a href="@Url.Action("Index","BILL", new { id = Session["Email"] +"/" })">Hóa đơn</a>

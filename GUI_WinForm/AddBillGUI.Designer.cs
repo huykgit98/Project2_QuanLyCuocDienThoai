@@ -29,18 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.txtNgayLapPhieu = new System.Windows.Forms.TextBox();
             this.txtPhiThueBao = new System.Windows.Forms.TextBox();
             this.txtMaSim = new System.Windows.Forms.TextBox();
             this.btnThemVaDong = new System.Windows.Forms.Button();
-            this.btnThemBill = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvAddBill = new System.Windows.Forms.DataGridView();
-            this.btnRong = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddBill)).BeginInit();
@@ -49,12 +47,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnRefresh);
-            this.groupBox1.Controls.Add(this.btnRong);
             this.groupBox1.Controls.Add(this.txtNgayLapPhieu);
             this.groupBox1.Controls.Add(this.txtPhiThueBao);
             this.groupBox1.Controls.Add(this.txtMaSim);
             this.groupBox1.Controls.Add(this.btnThemVaDong);
-            this.groupBox1.Controls.Add(this.btnThemBill);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -64,6 +60,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hóa Đơn";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(238, 206);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 9;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // txtNgayLapPhieu
             // 
@@ -97,24 +103,14 @@
             this.btnThemVaDong.UseVisualStyleBackColor = true;
             this.btnThemVaDong.Click += new System.EventHandler(this.btnThemVaDong_Click);
             // 
-            // btnThemBill
-            // 
-            this.btnThemBill.Location = new System.Drawing.Point(15, 206);
-            this.btnThemBill.Name = "btnThemBill";
-            this.btnThemBill.Size = new System.Drawing.Size(75, 23);
-            this.btnThemBill.TabIndex = 3;
-            this.btnThemBill.Text = "Thêm";
-            this.btnThemBill.UseVisualStyleBackColor = true;
-            this.btnThemBill.Click += new System.EventHandler(this.btnThemBill_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 85);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Ngày Lập Phiếu:";
+            this.label3.Text = "Ngày Tính Cước:";
             // 
             // label2
             // 
@@ -153,26 +149,6 @@
             this.dgvAddBill.TabIndex = 0;
             this.dgvAddBill.Click += new System.EventHandler(this.dgvAddBill_Click);
             // 
-            // btnRong
-            // 
-            this.btnRong.Location = new System.Drawing.Point(319, 27);
-            this.btnRong.Name = "btnRong";
-            this.btnRong.Size = new System.Drawing.Size(43, 23);
-            this.btnRong.TabIndex = 8;
-            this.btnRong.Text = "Rỗng";
-            this.btnRong.UseVisualStyleBackColor = true;
-            this.btnRong.Click += new System.EventHandler(this.btnRong_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(238, 206);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 9;
-            this.btnRefresh.Text = "btnRefresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // AddBillGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,12 +175,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnThemBill;
         private System.Windows.Forms.Button btnThemVaDong;
         private System.Windows.Forms.TextBox txtNgayLapPhieu;
         private System.Windows.Forms.TextBox txtPhiThueBao;
         private System.Windows.Forms.TextBox txtMaSim;
-        private System.Windows.Forms.Button btnRong;
         private System.Windows.Forms.Button btnRefresh;
     }
 }
