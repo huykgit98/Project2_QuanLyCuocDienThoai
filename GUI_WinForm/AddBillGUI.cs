@@ -53,9 +53,11 @@ namespace GUI_WinForm
             else
             {
                 var Id_SIM = txtMaSim.Text;
-                var date_export = new DateTime(Convert.ToDateTime(txtNgayLapPhieu.Text).Year, Convert.ToDateTime(txtNgayLapPhieu.Text).Month, 1);
-                var date_cut = date_export.AddMonths(1);
-                var TotalFare = detail.GetFare(Id_SIM, date_export, date_cut);
+                var date_export = new DateTime(Convert.ToDateTime(txtNgayLapPhieu.Text).Year, Convert.ToDateTime(txtNgayLapPhieu.Text).Day, Convert.ToDateTime(txtNgayLapPhieu.Text).Month);
+                var invoice_date = new DateTime(Convert.ToDateTime(txtInvoice_date.Text).Year, Convert.ToDateTime(txtInvoice_date.Text).Day, Convert.ToDateTime(txtInvoice_date.Text).Month);
+                var date_cut = invoice_date.AddMonths(1);
+                var date_endUse = date_export.AddMonths(1);
+                var TotalFare = detail.GetFare(Id_SIM, date_export, date_endUse);
 
                 // Gửi email để thông báo                
                 string id_customer = sim.getIDcustomer_in_Sim(Id_SIM);
@@ -63,10 +65,10 @@ namespace GUI_WinForm
                 string name_customer = customer.getName_in_Customer(id_customer);
                 
                 
-                    bill.SendBillByEmail(email, name_customer, Id_SIM, date_export, date_cut, 50000, TotalFare + Convert.ToInt32(txtPhiThueBao.Text));
+                    bill.SendBillByEmail(email, name_customer, Id_SIM, date_export, invoice_date, date_cut, 50000, TotalFare + Convert.ToInt32(txtPhiThueBao.Text));
                 // Lưu vào database
                 
-                    var result = bill.Create(Id_SIM, date_export, date_cut, Convert.ToInt32(txtPhiThueBao.Text), TotalFare + Convert.ToInt32(txtPhiThueBao.Text), false);
+                    var result = bill.Create(Id_SIM, date_export, invoice_date, date_cut, Convert.ToInt32(txtPhiThueBao.Text), TotalFare + Convert.ToInt32(txtPhiThueBao.Text), false);
                     Print_MessageBox(result, "Thông báo thêm");
                 
             }
@@ -90,7 +92,7 @@ namespace GUI_WinForm
         {
             txtMaSim.Text = "";
             txtPhiThueBao.Text = "50000";
-            txtNgayLapPhieu.Text = DateTime.Now.ToString();
+            txtInvoice_date.Text = DateTime.Now.Date.Day.ToString()+"/"+ DateTime.Now.Date.Month.ToString()+"/"+ DateTime.Now.Date.Year.ToString();
         }
 
         // Function Đóng bảng
@@ -100,15 +102,13 @@ namespace GUI_WinForm
         }
         private void AddBillGUI_Load(object sender, EventArgs e)
         {
+            txtInvoice_date.Text = DateTime.Now.Date.Day.ToString() + "/" + DateTime.Now.Date.Month.ToString() + "/" + DateTime.Now.Date.Year.ToString();
             dgvAddBill.DataSource = sim.GetAll();
             dgvAddBill.Columns[0].HeaderText = "Mã Sim";
             dgvAddBill.Columns[1].HeaderText = "Mã khách hàng";
 
             dgvAddBill.Columns[2].HeaderText = "Số điện thoại";
-            //for (int i = 0; i < dgvDSSim.Rows.Count - 1; i++)
-            //{
-            //    dgvDSSim.Rows[i].Cells[2].Value = dgvDSSim.Rows[i].Cells[2].Value.ToString();
-            //}
+            
             dgvAddBill.Columns[3].HeaderText = "Tình Trạng";
             dgvAddBill.Columns[4].Visible = false;
             dgvAddBill.Columns[5].Visible = false;
@@ -130,6 +130,11 @@ namespace GUI_WinForm
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             Refresh_All();
+        }
+
+        private void txtNgayLapPhieu_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

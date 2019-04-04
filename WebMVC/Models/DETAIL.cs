@@ -23,13 +23,5 @@ namespace WebMVC.Models
         public Nullable<int> fare { get; set; }
     
         public virtual SIM SIM { get; set; }
-        //hien thi dung dinh dang 0121231231 tren web
-/*        public string SoDienThoaiFormat
-        {
-            get
-            {
-                return "0" + SIM.phone;
-            }
-        }*/
     }
 }

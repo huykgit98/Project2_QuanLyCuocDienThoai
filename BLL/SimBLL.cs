@@ -17,18 +17,31 @@ namespace BLL
         {
             return sim_dal.GetAll_Array();
         }
-        public string Create(string id_cus, int phonenumber, bool status)
+        public string Create(string id_cus, string phonenumber, bool status)
         {
-            sim_dal.setSim(id_cus, phonenumber, status);
+            sim_dal.SetSim(id_cus, phonenumber, status);
             if (checkPhoneNumber())
                 return "Số điện thoại bị trùng";
-            else if (phonenumber.ToString().Length != 9)
+            else if (phonenumber.Length != 9)
             {
                 sim_dal.Create();
                 return "Thêm sim thành công !";
             }
             else
                 return "Không thể thêm, Số điện thoại không hợp lệ";
+        }
+        public string Create1( string phonenumber, bool status)
+        {
+            sim_dal.setSim(phonenumber, status);
+            if (checkPhoneNumber())
+                return "Số điện thoại bị trùng";
+            else if ((phonenumber.Length != 9) && (phonenumber.Substring(0, 1)=="0"))
+            {
+                sim_dal.Create();
+                return "Thêm sim thành công !";
+            }
+            else
+                return "Không thể thêm, Số điện thoại không hợp lệ (vd: 0312123423)!";
         }
 
         public string Delete(string id)
@@ -41,7 +54,7 @@ namespace BLL
         {
             return sim_dal.checkPhoneNumber();
         }
-        public string Update(string id, string id_cus, int phonenumber, bool status)
+        public string Update(string id, string id_cus, string phonenumber, bool status)
         {
             sim_dal.setSim(id, id_cus, phonenumber, status);
             if (checkPhoneNumber())

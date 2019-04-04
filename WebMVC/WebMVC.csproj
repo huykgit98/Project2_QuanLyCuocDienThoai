@@ -137,7 +137,6 @@
     <Compile Include="Models\BILL.cs">
       <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BillDetails.cs" />
     <Compile Include="Models\CONTRACT.cs">
       <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
     </Compile>
@@ -151,19 +150,19 @@
       <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\QuanLyDienThoaiDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyDienThoaiDB.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\QuanLyDienThoaiDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\QuanLyDienThoaiDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyDienThoaiDB.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\SIM.cs">
       <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
@@ -174,13 +173,16 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Models\QuanLyDienThoaiDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QuanLyDienThoaiDB.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>QuanLyDienThoaiDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\QuanLyDienThoaiDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
+    <Content Include="Models\QuanLyDienThoaiDB.edmx.diagram">
       <DependentUpon>QuanLyDienThoaiDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\QuanLyDienThoaiDB.tt">
+      <DependentUpon>QuanLyDienThoaiDB.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>QuanLyDienThoaiDB.cs</LastGenOutput>
     </Content>
     <Content Include="Web.config" />
@@ -195,17 +197,16 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\QuanLyDienThoaiDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QuanLyDienThoaiDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\QuanLyDienThoaiDB.edmx.diagram">
-      <DependentUpon>QuanLyDienThoaiDB.edmx</DependentUpon>
-    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\QuanLyDienThoaiDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLyDienThoaiDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

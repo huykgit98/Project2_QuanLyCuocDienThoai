@@ -100,10 +100,6 @@ namespace GUI_WinForm
             dgvDSSim.Columns[1].HeaderText = "Mã khách hàng";
 
             dgvDSSim.Columns[2].HeaderText = "Số điện thoại";
-            for (int i = 0; i < dgvDSSim.Rows.Count - 1; i++)
-            {
-                dgvDSSim.Rows[i].Cells[2].Value =String.Format("0"+dgvDSSim.Rows[i].Cells[2].Value.ToString());
-            }
             dgvDSSim.Columns[3].HeaderText = "Tình Trạng";
             dgvDSSim.Columns[4].Visible = false;
             dgvDSSim.Columns[5].Visible = false;
@@ -127,7 +123,7 @@ namespace GUI_WinForm
                     txtMaKH.Text = "";
                 }
                 else txtMaKH.Text = dgvDSSim.Rows[idx].Cells[1].Value.ToString();
-                txtSDT.Text = "0" + dgvDSSim.Rows[idx].Cells[2].Value.ToString();
+                txtSDT.Text =dgvDSSim.Rows[idx].Cells[2].Value.ToString();
                 string status = dgvDSSim.Rows[idx].Cells[3].Value.ToString();
                 if (status == "True")
                 {
@@ -158,7 +154,7 @@ namespace GUI_WinForm
                 txtMaKH.Text = "";
             }
             else txtMaKH.Text = dgvDSSim.Rows[idx].Cells[1].Value.ToString();
-            txtSDT.Text = "0"+dgvDSSim.Rows[idx].Cells[2].Value.ToString();
+            txtSDT.Text = dgvDSSim.Rows[idx].Cells[2].Value.ToString();
             string status = dgvDSSim.Rows[idx].Cells[3].Value.ToString();
             if (status == "True")
             {
@@ -185,7 +181,7 @@ namespace GUI_WinForm
                     status = false;
                 if (rdbDaSD.Checked == true)
                     status = true;
-                string result = simbll.Update(txtMaSim.Text, txtMaKH.Text, Convert.ToInt32(txtSDT.Text), status);
+                string result = simbll.Update(txtMaSim.Text, txtMaKH.Text, txtSDT.Text, status);
                 Print_MessageBox(result, "Thông báo sửa");
             }
             catch { }

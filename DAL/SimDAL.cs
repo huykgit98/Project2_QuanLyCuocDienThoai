@@ -16,20 +16,24 @@ namespace DAL
         {
             this.sim.id = id;
         }
-        public void setSim(string id, string cus_id, int phonenumber, bool status)
+        public void setSim(string id, string cus_id, string phonenumber, bool status)
         {
             this.sim.id = id;
             this.sim.phone = phonenumber;
             this.sim.id_cus = cus_id;
             this.sim.status = status;
         }
-        public void setSim(string id, int phonenumber, bool status)
+        public void SetSim(string cus_id, string phonenumber, bool status)
         {
-            this.sim.id = id;
+            this.sim.id_cus = cus_id;
             this.sim.phone = phonenumber;
             this.sim.status = status;
         }
-
+        public void setSim(string phone, bool status)
+        {
+            this.sim.phone = phone;
+            this.sim.status = status;
+        }
         public void setSim(string id_sim, string id_customer, bool status)
         {
             this.sim.id = id_sim;

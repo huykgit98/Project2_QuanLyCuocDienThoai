@@ -39,6 +39,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvAddBill = new System.Windows.Forms.DataGridView();
+            this.txtInvoice_date = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddBill)).BeginInit();
@@ -46,6 +48,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtInvoice_date);
             this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.txtNgayLapPhieu);
             this.groupBox1.Controls.Add(this.txtPhiThueBao);
@@ -73,10 +77,11 @@
             // 
             // txtNgayLapPhieu
             // 
-            this.txtNgayLapPhieu.Location = new System.Drawing.Point(104, 82);
+            this.txtNgayLapPhieu.Location = new System.Drawing.Point(103, 67);
             this.txtNgayLapPhieu.Name = "txtNgayLapPhieu";
             this.txtNgayLapPhieu.Size = new System.Drawing.Size(245, 20);
             this.txtNgayLapPhieu.TabIndex = 7;
+            this.txtNgayLapPhieu.TextChanged += new System.EventHandler(this.txtNgayLapPhieu_TextChanged);
             // 
             // txtPhiThueBao
             // 
@@ -106,11 +111,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 85);
+            this.label3.Location = new System.Drawing.Point(12, 74);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 13);
+            this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Ngày Tính Cước:";
+            this.label3.Text = "Kì Sử Dụng:";
             // 
             // label2
             // 
@@ -149,6 +154,22 @@
             this.dgvAddBill.TabIndex = 0;
             this.dgvAddBill.Click += new System.EventHandler(this.dgvAddBill_Click);
             // 
+            // txtInvoice_date
+            // 
+            this.txtInvoice_date.Location = new System.Drawing.Point(103, 105);
+            this.txtInvoice_date.Name = "txtInvoice_date";
+            this.txtInvoice_date.Size = new System.Drawing.Size(245, 20);
+            this.txtInvoice_date.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 108);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Ngày Lập:";
+            // 
             // AddBillGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,5 +201,7 @@
         private System.Windows.Forms.TextBox txtPhiThueBao;
         private System.Windows.Forms.TextBox txtMaSim;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtInvoice_date;
     }
 }

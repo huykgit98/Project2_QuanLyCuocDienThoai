@@ -24,7 +24,7 @@ namespace WebMVC.Models
     
         public string id { get; set; }
         public string id_cus { get; set; }
-        public Nullable<int> phone { get; set; }
+        public string phone { get; set; }
         public Nullable<bool> status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

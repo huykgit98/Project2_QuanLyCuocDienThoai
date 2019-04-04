@@ -21,6 +21,7 @@ namespace WebMVC.Models
         public Nullable<int> postage { get; set; }
         public Nullable<int> fare { get; set; }
         public Nullable<bool> status { get; set; }
+        public Nullable<System.DateTime> invoice_date { get; set; }
     
         public virtual SIM SIM { get; set; }
     }

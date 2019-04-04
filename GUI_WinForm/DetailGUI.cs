@@ -60,15 +60,16 @@ namespace GUI_WinForm
             dgvCTSD.Columns[1].HeaderText = "Mã Sim";
 
             dgvCTSD.Columns[2].HeaderText = "Thời Gian Bắt Đầu";
-            //for (int i = 0; i < dgvCTSD.Rows.Count - 1; i++)
-            //{
-            //    dgvCTSD.Rows[i].Cells[2].Value = dgvCTSD.Rows[i].Cells[2].Value.ToString();
-            //}
+            dgvCTSD.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
+
             dgvCTSD.Columns[3].HeaderText = "Thời Gian Kết Thúc";
+            dgvCTSD.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+
             dgvCTSD.Columns[4].HeaderText = "Số phút khung giờ chính";
             dgvCTSD.Columns[5].HeaderText = "Số phút khung giờ phụ";
             dgvCTSD.Columns[6].HeaderText = "Tổng giá cước";
             dgvCTSD.Columns[7].Visible = false;
+
         }
 
         private void btnTim_Click(object sender, EventArgs e)

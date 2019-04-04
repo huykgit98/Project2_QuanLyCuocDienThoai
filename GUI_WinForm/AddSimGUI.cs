@@ -22,34 +22,17 @@ namespace GUI_WinForm
 
         private void AddSimGUI_Load(object sender, EventArgs e)
         {
-            dgvDSKH.DataSource = new BindingSource(customer.GetAll(), "");
-            dgvDSKH.Columns[0].HeaderText = "Mã KH";
-            dgvDSKH.Columns[1].HeaderText = "Tên KH";
-            dgvDSKH.Columns[2].HeaderText = "CMND";
-            dgvDSKH.Columns[3].HeaderText = "Nghề Nghiệp";
-            dgvDSKH.Columns[4].Visible = false;
-            dgvDSKH.Columns[5].Visible = false;
-            dgvDSKH.Columns[6].Visible = false;
-            dgvDSKH.Columns[7].Visible = false;
+            
         }
 
         private void dgvDSKH_Click(object sender, EventArgs e)
         {
-            int idx = dgvDSKH.CurrentRow.Index;
-
-            if (dgvDSKH.Rows[idx].Cells[0].Value != null)
-            {
-                txtMaKH.Text = dgvDSKH.Rows[idx].Cells[0].Value.ToString();
-                rdbSuDung.Checked = true;
-                rdbChuaSD.Checked = false;
-            }
-
+            
             
         }
         // Click vào rỗng để cho id customer là trống, thêm số dt
         private void btnRong_Click(object sender, EventArgs e)
         {
-            txtMaKH.Text = "";
             rdbSuDung.Checked = false;
             rdbChuaSD.Checked = true;
         }
@@ -90,8 +73,7 @@ namespace GUI_WinForm
                     status = false;
                 else
                     status = true;
-
-                result = simbll.Create(txtMaKH.Text, Convert.ToInt32(txtSDTKH.Text), status);
+                result = simbll.Create1(txtSDTKH.Text, status);
                 Print_MessageBox(result, "Thông báo thêm");
             }
             catch
@@ -110,7 +92,7 @@ namespace GUI_WinForm
         // Function làm lại, refresh
         private void Refresh_All()
         {
-            TextBox[] textboxs = new TextBox[] { txtMaKH, txtSDTKH };
+            TextBox[] textboxs = new TextBox[] { txtSDTKH };
             for (int i = 0; i < textboxs.Length; i++)
             {
                 textboxs[i].Text = "";

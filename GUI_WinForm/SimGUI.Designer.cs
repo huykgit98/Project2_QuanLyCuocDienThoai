@@ -89,6 +89,7 @@
             // 
             this.txtTimSim.Location = new System.Drawing.Point(471, 106);
             this.txtTimSim.Name = "txtTimSim";
+            this.txtTimSim.ReadOnly = true;
             this.txtTimSim.Size = new System.Drawing.Size(186, 20);
             this.txtTimSim.TabIndex = 45;
             // 

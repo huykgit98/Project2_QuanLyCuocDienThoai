@@ -83,7 +83,13 @@ namespace GUI_WinForm
 
         private void btnIn_Click(object sender, EventArgs e)
         {
+            check_payment();
+            inHoaDon();
+        }
 
+        private void inHoaDon()
+        {
+            throw new NotImplementedException();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -115,13 +121,18 @@ namespace GUI_WinForm
             dgvDSHD.Columns[0].HeaderText = "Mã Hóa Đơn";
             dgvDSHD.Columns[1].HeaderText = "Mã Sim";
 
-            dgvDSHD.Columns[2].HeaderText = "Ngày Tính";
-
-            dgvDSHD.Columns[3].HeaderText = "Ngày Cắt";
+            dgvDSHD.Columns[2].HeaderText = "Kì Sử Dụng";
+            dgvDSHD.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgvDSHD.Columns[3].HeaderText = "Hạn Thanh Toán";
+            dgvDSHD.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgvDSHD.Columns[7].HeaderText = "Ngày Lập";
+            dgvDSHD.Columns[7].DefaultCellStyle.Format = "dd/MM/yyyy";
             dgvDSHD.Columns[4].HeaderText = "Cước Thuê Bao";
-            dgvDSHD.Columns[5].HeaderText = "Cước Phí Hàng Tháng";
+            dgvDSHD.Columns[5].HeaderText = "Tổng Thanh Toán";
             dgvDSHD.Columns[6].HeaderText = "Tình Trạng";
-            dgvDSHD.Columns[7].Visible = false;
+          
+            dgvDSHD.Columns[8].Visible = false;
+
         }
 
         private void Print_MessageBox(string StringMessage, string title)
@@ -176,6 +187,7 @@ namespace GUI_WinForm
         }
 
         // Function Tìm ID SIM
+        //tìm sim bị lỗi do 1 kh có nhiều sim
 
         private void search()
         {
@@ -186,19 +198,25 @@ namespace GUI_WinForm
             else
             {
                 dgvDSHD.DataSource = new BindingSource(simbll.SearchBy_CustomerName(txtTim.Text), "");
-                int idx = dgvDSHD.CurrentRow.Index;
-                txtMaHD.Text = dgvDSHD.Rows[idx].Cells[0].Value.ToString();
-                txtMaSim.Text = dgvDSHD.Rows[idx].Cells[1].Value.ToString();
-                txtNgayLapPhieu.Text = dgvDSHD.Rows[idx].Cells[2].Value.ToString();
-                txtNgayCat.Text = dgvDSHD.Rows[idx].Cells[3].Value.ToString();
-                txtPhiThueBao.Text = dgvDSHD.Rows[idx].Cells[4].Value.ToString();
-                txtCuocThang.Text = dgvDSHD.Rows[idx].Cells[5].Value.ToString();
-                    txtTinhTrang.Text = dgvDSHD.Rows[idx].Cells[6].Value.ToString();
+                dgvDSHD.Columns[0].HeaderText = "Mã Hóa Đơn";
+                dgvDSHD.Columns[1].HeaderText = "Mã Sim";
 
+                dgvDSHD.Columns[2].HeaderText = "Ngày Xuất Phiếu";
+                dgvDSHD.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
+                dgvDSHD.Columns[3].HeaderText = "Ngày Cắt";
+                dgvDSHD.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+
+                dgvDSHD.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
+                dgvDSHD.Columns[4].HeaderText = "Cước Thuê Bao";
+                dgvDSHD.Columns[5].HeaderText = "Cước Phí Hàng Tháng";
+                dgvDSHD.Columns[6].HeaderText = "Tình Trạng";
+
+                dgvDSHD.Columns[7].Visible = false;
+                
+                
             }
         }
 
-        //tìm sim bị lỗi do 1 kh có nhiều sim
         private void dgvDSHD_Click(object sender, EventArgs e)
         {
             int idx = dgvDSHD.CurrentRow.Index;
@@ -206,10 +224,12 @@ namespace GUI_WinForm
             {
                 txtMaHD.Text = dgvDSHD.Rows[idx].Cells[0].Value.ToString();
                 txtMaSim.Text = dgvDSHD.Rows[idx].Cells[1].Value.ToString();
-                txtNgayLapPhieu.Text = dgvDSHD.Rows[idx].Cells[2].Value.ToString();
-                txtNgayCat.Text = dgvDSHD.Rows[idx].Cells[3].Value.ToString();
+                txtNgayLapPhieu.Text = DateTime.Parse(dgvDSHD.Rows[idx].Cells[2].Value.ToString()).ToString("dd/MM/yyyy");
+                txtNgayCat.Text = DateTime.Parse(dgvDSHD.Rows[idx].Cells[3].Value.ToString()).ToString("dd/MM/yyyy");
                 txtPhiThueBao.Text = dgvDSHD.Rows[idx].Cells[4].Value.ToString();
                 txtCuocThang.Text = dgvDSHD.Rows[idx].Cells[5].Value.ToString();
+                txtInvoiceDate.Text = DateTime.Parse(dgvDSHD.Rows[idx].Cells[7].Value.ToString()).ToString("dd/MM/yyyy");
+
                 if (Convert.ToBoolean(dgvDSHD.Rows[idx].Cells[6].Value) == true)
                     txtTinhTrang.Text = "Đã thanh toán";
                 else

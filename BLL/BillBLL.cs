@@ -13,13 +13,16 @@ namespace BLL
         {
             return bill_dal.GetAll();
         }
-        public string Create(string id_sim, DateTime date_ex, DateTime date_cut, int postage, int fare, bool status)
+        public string Create(string id_sim, DateTime date_ex, DateTime invoice_date, DateTime date_cut, int postage, int fare, bool status)
         {
             if (checkIfExist())
-                return "Hóa đơn này đã lập trong tháng " + date_ex.Month + " năm " + date_ex.Year;
-            bill_dal.setBill(id_sim, date_ex, date_cut, postage, fare, status);
-            bill_dal.Create();
-            return "Thêm thành công hóa đơn và hóa đơn gửi đến mail khách hàng";
+            { return "Hóa đơn này đã lập trong tháng " + date_ex.Month + " năm " + date_ex.Year; }
+            else
+            {
+                bill_dal.setBill(id_sim, date_ex, invoice_date, date_cut, postage, fare, status);
+                bill_dal.Create();
+                return "Thêm thành công hóa đơn và hóa đơn gửi đến mail khách hàng";
+            }
         }
 
         public bool checkIfExist()
@@ -32,9 +35,9 @@ namespace BLL
             bill_dal.Delete();
         }
 
-        public void Update(string id, string id_sim, DateTime date_ex, DateTime date_cut, int postage, int fare, bool status)
+        public void Update(string id, string id_sim, DateTime date_ex,DateTime invoice_date, DateTime date_cut, int postage, int fare, bool status)
         {
-            bill_dal.setBill(id, id_sim, date_ex, date_cut, postage, fare, status);
+            bill_dal.setBill(id, id_sim, date_ex, invoice_date, date_cut, postage, fare, status);
             bill_dal.Update();
         }
         public void Pay(string id)
@@ -47,9 +50,9 @@ namespace BLL
             return bill_dal.SearchBy_CustomerName(name);
         }
 
-        public bool SendBillByEmail(string toMail, string name_customer, string id_sim, DateTime date_ex, DateTime date_cut, int postage, int fare)
+        public bool SendBillByEmail(string toMail, string name_customer, string id_sim, DateTime date_ex, DateTime invoice_date, DateTime date_cut, int postage, int fare)
         {
-            bill_dal.setBill(id_sim, date_ex, date_cut, postage, fare, false);
+            bill_dal.setBill(id_sim, date_ex, invoice_date, date_cut, postage, fare, false);
             return bill_dal.SendBillByEmail(toMail, name_customer);
         }
     }

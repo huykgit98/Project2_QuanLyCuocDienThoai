@@ -10,20 +10,22 @@ namespace DAL
     {
         QuanLyCuocDienThoai_dbEntities1 db = new QuanLyCuocDienThoai_dbEntities1();
         BILL bill = new BILL();
-        public void setBill(string id, string id_sim, DateTime date_ex, DateTime date_cut, int postage, int fare, bool status)
+        public void setBill(string id, string id_sim, DateTime date_ex, DateTime invoid_date, DateTime date_cut, int postage, int fare, bool status)
         {
             this.bill.id = id;
             this.bill.id_sim = id_sim;
             this.bill.date_export = date_ex;
+            this.bill.invoice_date = invoid_date;
             this.bill.date_cut = date_cut;
             this.bill.postage = postage;
             this.bill.fare = fare;
             this.bill.status = status;
         }
-        public void setBill(string id_sim, DateTime date_ex, DateTime date_cut, int postage, int fare, bool status)
+        public void setBill(string id_sim, DateTime date_ex, DateTime invoid_date, DateTime date_cut, int postage, int fare, bool status)
         {
             this.bill.id_sim = id_sim;
             this.bill.date_export = date_ex;
+            this.bill.invoice_date = invoid_date;
             this.bill.date_cut = date_cut;
             this.bill.postage = postage;
             this.bill.fare = fare;
@@ -73,6 +75,7 @@ namespace DAL
 
             edited_bill.id_sim = bill.id_sim;
             edited_bill.date_export = bill.date_export;
+            edited_bill.invoice_date = bill.invoice_date;
             edited_bill.date_cut = bill.date_cut;
             edited_bill.postage = bill.postage;
             edited_bill.fare = bill.fare;
@@ -125,7 +128,7 @@ namespace DAL
 
             string htmlBody = @"
             <div style='float:left;'>
-		        <div style='float:left; width:100%; padding: 2% 2%; background-color:#4286f4; border:1px solid #4286f4; color:white; font-size: 30px; border-top-left-radius: 10px; border-top-right-radius:10px'>
+		        <div style='float:left; width:100%; padding: 2% 2%; border:1px solid #4286f4; color:white; font-size: 30px; border-top-left-radius: 10px; border-top-right-radius:10px'>
 			        Thanh toán cước điện thoại hàng tháng
 		        </div>
 		        <div style='float:left; width:100%; background-color:#ffffff; padding: 2% 2%; border:1px solid#4286f4;'>
@@ -137,10 +140,14 @@ namespace DAL
 				        </p>
 			        </div>
 			        <div style='float:left; width:100%; padding: 2% 2%;'>
-				        <table style='border:3px solid #cc0000; width: 90%;'>					       
+				        <table style='border:3px solid #cc0000; width: 90%;'>
+                            <tr>
+						        <td>Ngày Lập Hóa Đơn:</td>
+						        <td><span style='font-weight: bold;'>" + bill.date_export.ToString() + @"</span></td>
+					        </tr>
 					        <tr>
 						        <td>Thời gian đã sử dụng:</td>
-						        <td><span style='font-weight: bold;'><span style='font-weight: bold;'>" + bill.date_export.ToString() + @" - " + bill.date_cut.ToString() + @"</span></td>
+						        <td><span style='font-weight: bold;'><span style='font-weight: bold;'>" + bill.date_export.ToString() + @" - " + bill.invoice_date.ToString() + @"</span></td>
 					        </tr>					        
 					        <tr>
 						        <td>Tiền thuê bao hàng tháng:</td>
@@ -162,7 +169,6 @@ namespace DAL
 		        </div>	
                 <div style='float:left; width:100%; padding: 0% 2%; border:1px solid #4286f4; background-color:#4286f4;'>
 			        <div style='float:left; width:3%;'>
-				        <img width='20' height='20' src='https://lh3.googleusercontent.com/-Bl9Q-InF8O0/XAvv_Ihbg4I/AAAAAAAAB60/aniY2GoNQDgJkIFjj0zRyrzOfjSW2-gWwCL0BGAs/w530-d-h530-n-rw/call.png' />
 			        </div>
 			        <div style='float:left; width:50%; padding-top: 0.2%; color: white'>Nhóm 04 MHPL</div>
 		        </div>	

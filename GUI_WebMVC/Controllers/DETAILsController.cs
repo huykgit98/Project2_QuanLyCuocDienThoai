@@ -20,48 +20,13 @@ namespace GUI_WebMVC.Controllers
             return View(db.DETAILs.ToList());
         }
         [HttpPost]
-        public ActionResult Index(string sdt, DETAIL d)
+        public ActionResult Index(string sdt)
         {
 
-            var dt = db.DETAILs.ToList().Where(p => p.SoDienThoaiFormat.StartsWith(sdt));
+            var dt = db.DETAILs.ToList().Where(p => p.SIM.phone.Contains(sdt));
             return View(dt);
         }
-        
-        // GET: DETAILs
-        public ActionResult Index(string id, string simID, string StartDate, string EndDate)
-        {
-
-            var cus = db.CUSTOMERs.Where(s => s.email == id + "@gmail.com").FirstOrDefault();
-            var sim = db.SIMs.Where(s => s.id_cus == cus.id);
-            ViewBag.simID = new SelectList(sim, "id", "phone");
-            ViewBag.StartDate = StartDate;
-            ViewBag.EndDate = EndDate;
-            var dETAIL = db.DETAILs.Where(s => sim.Any(s2 => s2.id == s.id_sim));
-            if (!String.IsNullOrEmpty(simID) && !String.IsNullOrEmpty(StartDate) && !String.IsNullOrEmpty(EndDate))
-            {
-                sim = sim.Where(s => s.id.Contains(simID));
-                try
-                {
-                    DateTime sdate = Convert.ToDateTime(StartDate);
-                    DateTime edate = Convert.ToDateTime(EndDate);
-                    dETAIL = db.DETAILs.Where(s => sim.Any(s2 => s2.id == s.id_sim) && s.time_start >= sdate && s.time_stop <= edate);
-                }
-                catch (Exception ex) //Truong hop loi dinh dang MM dd yyyy
-                {
-                    dETAIL = db.DETAILs.Where(s => sim.Any(s2 => s2.id == s.id_sim));
-                }
-            }
-            else if (!String.IsNullOrEmpty(simID)) //Truong hop chi loc theo sdt
-            {
-                sim = sim.Where(s => s.id.Contains(simID));
-                dETAIL = db.DETAILs.Where(s => sim.Any(s2 => s2.id == s.id_sim));
-            }
-            if (dETAIL == null)
-            {
-            }
-            return View(dETAIL.ToList());
-
-        }
+      
 
         protected override void Dispose(bool disposing)
         {

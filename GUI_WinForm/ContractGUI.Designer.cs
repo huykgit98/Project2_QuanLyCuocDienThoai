@@ -50,6 +50,7 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.txtTim = new System.Windows.Forms.TextBox();
             this.btnBackHome = new System.Windows.Forms.Button();
+            this.btnInHoaDon = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).BeginInit();
             this.SuspendLayout();
@@ -186,9 +187,9 @@
             // 
             this.btnThem.Location = new System.Drawing.Point(525, 48);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.Size = new System.Drawing.Size(95, 23);
             this.btnThem.TabIndex = 13;
-            this.btnThem.Text = "Thêm HĐ";
+            this.btnThem.Text = "Thêm Hợp Đồng";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -204,7 +205,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(607, 48);
+            this.btnClear.Location = new System.Drawing.Point(626, 48);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 15;
@@ -224,7 +225,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(178, 94);
+            this.btnRefresh.Location = new System.Drawing.Point(259, 94);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 17;
@@ -251,7 +252,7 @@
             // 
             // btnBackHome
             // 
-            this.btnBackHome.Location = new System.Drawing.Point(259, 94);
+            this.btnBackHome.Location = new System.Drawing.Point(340, 94);
             this.btnBackHome.Name = "btnBackHome";
             this.btnBackHome.Size = new System.Drawing.Size(129, 23);
             this.btnBackHome.TabIndex = 21;
@@ -259,11 +260,21 @@
             this.btnBackHome.UseVisualStyleBackColor = true;
             this.btnBackHome.Click += new System.EventHandler(this.btnBackHome_Click);
             // 
+            // btnInHoaDon
+            // 
+            this.btnInHoaDon.Location = new System.Drawing.Point(178, 94);
+            this.btnInHoaDon.Name = "btnInHoaDon";
+            this.btnInHoaDon.Size = new System.Drawing.Size(75, 23);
+            this.btnInHoaDon.TabIndex = 22;
+            this.btnInHoaDon.Text = "In Hóa Đơn";
+            this.btnInHoaDon.UseVisualStyleBackColor = true;
+            // 
             // ContractGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnInHoaDon);
             this.Controls.Add(this.btnBackHome);
             this.Controls.Add(this.txtTim);
             this.Controls.Add(this.btnSua);
@@ -319,5 +330,6 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.TextBox txtTim;
         private System.Windows.Forms.Button btnBackHome;
+        private System.Windows.Forms.Button btnInHoaDon;
     }
 }
