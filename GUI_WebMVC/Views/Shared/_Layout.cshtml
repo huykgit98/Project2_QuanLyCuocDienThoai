@@ -23,40 +23,24 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    
-                    
+
+
                 </ul>
-                @using (Html.BeginForm("Index", "BILL", FormMethod.Get, new { @class = "navbar-form navbar-right", role = "search", id = "search-form" }))
+                
+                @using (Html.BeginForm("Bill", "Home", FormMethod.Post, new { @class = "navbar-form navbar-right", role = "search", id = "formSearch" }))
                 {
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nhập sdt or email để tìm hóa đơn" name="SearchTerm" value="@ViewBag.SearchTerm" id="search-box">
+                        <input type="text" class="form-control" placeholder="Nhập sđt để tìm"  id="sdt" name="sdt">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-default hidden-xs"><i class="glyphicon glyphicon-search"></i></button>
+                        <button type="submit"  id="submitSearch" class="btn btn-default hidden-xs"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
                 }
             </div>
         </div>
     </div>
-    <div class="navbar-default sidebar" role="navigation">
-        <div class="sidebar-nav navbar-collapse">
-            <ul class="nav" id="side-menu">
-                
-                <li>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="@Url.Action("Index","DETAILS", new { id = Session["Email"] + "/" })">Tra cước</a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index","BILL", new { id = Session["Email"] +"/" })">Hóa đơn</a>
-                        </li>
-                    </ul>
-                    <!-- /.nav-second-level -->
-                </li>
-            </ul>
-        </div>
+    
         <!-- /.sidebar-collapse -->
-    </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -84,5 +68,12 @@
     <script src="~/Content/Template/data/morris-data.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="~/Content/Template/dist/js/sb-admin-2.js"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("dulieu");
+                x.style.display = "block";
+           
+        }
+    </script>
 </body>
 </html>

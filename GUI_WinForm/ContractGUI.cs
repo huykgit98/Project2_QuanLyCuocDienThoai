@@ -63,7 +63,7 @@ namespace GUI_WinForm
             dgvDSHD.Columns[1].HeaderText = "Mã Sim";
 
             dgvDSHD.Columns[2].HeaderText = "Ngày Đăng Ký";
-
+            dgvDSHD.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
             dgvDSHD.Columns[3].HeaderText = "Phí";
             dgvDSHD.Columns[4].HeaderText = "Tình Trạng";
             dgvDSHD.Columns[5].Visible = false;
@@ -75,8 +75,8 @@ namespace GUI_WinForm
             if (dgvDSHD.Rows[idx].Cells[0].Value != null)
             {
                 txtMaHopDong.Text = dgvDSHD.Rows[idx].Cells[0].Value.ToString();
-                txtMaSim.Text = dgvDSHD.Rows[idx].Cells[1].Value.ToString();
-                txtNgayDangKy.Text = dgvDSHD.Rows[idx].Cells[2].Value.ToString();
+                txtMaSim.Text = (dgvDSHD.Rows[idx].Cells[1].Value.ToString());
+                txtNgayDangKy.Text = DateTime.Parse(dgvDSHD.Rows[idx].Cells[2].Value.ToString()).ToString("dd/MM/yyyy");
                 txtPhiDK.Text = dgvDSHD.Rows[idx].Cells[3].Value.ToString();
                 string status = dgvDSHD.Rows[idx].Cells[4].Value.ToString();
                 if (status == "True")
@@ -200,7 +200,7 @@ namespace GUI_WinForm
                 int idx = dgvDSHD.CurrentRow.Index;
                 txtMaHopDong.Text = dgvDSHD.Rows[idx].Cells[0].Value.ToString();
                 txtMaSim.Text = dgvDSHD.Rows[idx].Cells[1].Value.ToString();
-                txtNgayDangKy.Text = dgvDSHD.Rows[idx].Cells[2].Value.ToString();
+                txtNgayDangKy.Text = DateTime.Parse(dgvDSHD.Rows[idx].Cells[2].Value.ToString()).ToString("dd/MM/yyyy");
                 txtPhiDK.Text = dgvDSHD.Rows[idx].Cells[3].Value.ToString();
                 string status = dgvDSHD.Rows[idx].Cells[4].Value.ToString();
                 if (status == "True")
