@@ -47,7 +47,8 @@ namespace DAL
         }
         public string[] GetAll_Array()
         {
-            string[] sim = db.SIMs.Select(C => C.id).ToArray();
+            //lấy sim mà id_cus k rỗng
+            string[] sim = db.SIMs.Where(S => S.id_cus != null).Select(C => C.id).ToArray();
             return sim;
         }
         public void Create()

@@ -143,11 +143,11 @@ namespace DAL
 				        <table style='border:3px solid #cc0000; width: 90%;'>
                             <tr>
 						        <td>Ngày Lập Hóa Đơn:</td>
-						        <td><span style='font-weight: bold;'>" + bill.date_export.ToString() + @"</span></td>
+						        <td><span style='font-weight: bold;'>" + bill.invoice_date.ToString() + @"</span></td>
 					        </tr>
 					        <tr>
-						        <td>Thời gian đã sử dụng:</td>
-						        <td><span style='font-weight: bold;'><span style='font-weight: bold;'>" + bill.date_export.ToString() + @" - " + bill.invoice_date.ToString() + @"</span></td>
+						        <td>Kì Sử Dụng:</td>
+						        <td><span style='font-weight: bold;'><span style='font-weight: bold;'>" + bill.date_export.ToString() + @"</span></td>
 					        </tr>					        
 					        <tr>
 						        <td>Tiền thuê bao hàng tháng:</td>
@@ -160,11 +160,11 @@ namespace DAL
 				        </table>			
 			        </div>
 			        <div style='float:left; width:100%; padding: 2% 0%;' background-color:#ffffff; font-weight: bold;'>
-				        Nếu quý khách có thắc mắc vấn đề gì có thể liên hệ qua <span style='color: #cc0000'> 0387134747 (huy nguyen) </span>. hoặc có thể đi tới địa chỉ của dịch vụ chúng ta.
+				        Nếu quý khách có thắc mắc vấn đề gì có thể liên hệ qua <span style='color: #cc0000'> 0387134747 (huy nguyen) </span>.
 			        </div>
 			        <div style='float:left; width:100%; padding: 2% 0%;' background-color:#ffffff;'>
 				        Thân trọng kính chào ! <br />
-				        <strong>Dịch vụ cước điện thoại GTHD</strong>
+				        <strong>Dịch vụ cước điện thoại Nhóm 04</strong>
 			        </div>                    
 		        </div>	
                 <div style='float:left; width:100%; padding: 0% 2%; border:1px solid #4286f4; background-color:#4286f4;'>

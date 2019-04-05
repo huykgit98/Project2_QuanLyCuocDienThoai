@@ -34,7 +34,7 @@ namespace GUI_WinForm
         }
         private void btnPhatSinhLog_Click(object sender, EventArgs e)
         {
-            DateTime t1 = DateTime.Now.AddMonths(-6);
+            DateTime t1 = DateTime.Now.AddMonths(-2);
 
             SaveFileDialog savefile = new SaveFileDialog();
 
@@ -51,9 +51,9 @@ namespace GUI_WinForm
                     {
                         sw.WriteLine("IDSIM\tTGBD\tTGKT");
                         int itemRows = 0;
-                        while (itemRows < 1000)
+                        while (itemRows < 150)
                         {
-                            t1 = t1.Add(RandomTimeSpan()).AddDays(RandomInteger(0, 3));
+                            t1 = t1.Add(RandomTimeSpan()).AddDays(RandomInteger(0, 2));
                             DateTime t2 = t1.Add(RandomTimeSpan());
                             itemRows++;
                             var temp = RandomInteger(0, array.Length);
@@ -73,8 +73,8 @@ namespace GUI_WinForm
         }
         private TimeSpan RandomTimeSpan()
         {
-            TimeSpan start = TimeSpan.FromHours(0);
-            TimeSpan end = TimeSpan.FromHours(24);
+            TimeSpan start = TimeSpan.FromMinutes(0);
+            TimeSpan end = TimeSpan.FromMinutes(60);
             int maxMinutes = (int)((end - start).TotalMinutes);
             int minutes = random.Next(maxMinutes);
             return start.Add(TimeSpan.FromMinutes(minutes));

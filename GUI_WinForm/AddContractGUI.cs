@@ -50,8 +50,16 @@ namespace GUI_WinForm
                 status = false;
             if (txtMaSim.Text != "")
             {
+                // Gửi email để thông báo                
+                string id_customer = simbll.getIDcustomer_in_Sim(txtMaSim.Text);
+                string email = customer.getEmail_in_Customer(txtMaKH.Text);
+                string name_customer = customer.getName_in_Customer(txtMaKH.Text);
+                var date_regis = new DateTime(Convert.ToDateTime(txtNgayDK.Text).Year, Convert.ToDateTime(txtNgayDK.Text).Day, Convert.ToDateTime(txtNgayDK.Text).Month);
+
+
                 string result = contractbll.Create(txtMaSim.Text, Convert.ToDateTime(txtNgayDK.Text), Convert.ToInt32(txtPhi.Text), status);
                 simbll.Update_ID_Customer(txtMaSim.Text, txtMaKH.Text, status);
+                contractbll.SendContractByEmail(email, name_customer, txtMaSim.Text, date_regis, Convert.ToInt32(txtPhi.Text));
                 Print_MessageBox(result, "Thông báo thêm");
                 dgvKH.DataSource = new BindingSource(customer.GetAll(), "");
                 dgvSim.DataSource = new BindingSource(simbll.GetAll(), "");

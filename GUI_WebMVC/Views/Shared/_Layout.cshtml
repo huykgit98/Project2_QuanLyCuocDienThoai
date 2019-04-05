@@ -21,26 +21,25 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                   
 
 
                 </ul>
-                
+
                 @using (Html.BeginForm("Bill", "Home", FormMethod.Post, new { @class = "navbar-form navbar-right", role = "search", id = "formSearch" }))
                 {
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nhập sđt để tìm"  id="sdt" name="sdt">
+                        <input type="text" class="form-control" placeholder="Nhập sđt để tìm" id="sdt" name="sdt">
                     </div>
                     <div class="form-group">
-                        <button type="submit"  id="submitSearch" class="btn btn-default hidden-xs"><i class="glyphicon glyphicon-search"></i></button>
+                        <button type="submit" onclick="myFunction()" id="submitSearch" class="btn btn-default hidden-xs"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
                 }
             </div>
         </div>
     </div>
-    
-        <!-- /.sidebar-collapse -->
+
+    <!-- /.sidebar-collapse -->
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -54,7 +53,7 @@
     @RenderSection("scripts", required: false)
 
     <script>
-    function enableBtn() {
+        function enableBtn() {
             document.getElementById("btnDisabled").disabled = false;
         }</script>
     <script src="~/Content/Template/vendor/jquery/jquery.min.js"></script>
@@ -71,9 +70,13 @@
     <script>
         function myFunction() {
             var x = document.getElementById("dulieu");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
                 x.style.display = "block";
-           
+            }
         }
     </script>
+
 </body>
 </html>

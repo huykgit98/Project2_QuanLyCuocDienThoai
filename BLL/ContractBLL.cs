@@ -51,5 +51,10 @@ namespace BLL
         {
             return contract_dal.SearchBy_CustomerName(name);
         }
+        public bool SendContractByEmail(string toMail, string name_customer, string sim_id, DateTime date, int? fee)
+        {
+            contract_dal.setCONTRACT(sim_id, date, fee, false);
+            return contract_dal.SendContractByEmail(toMail, name_customer);
+        }
     }
 }

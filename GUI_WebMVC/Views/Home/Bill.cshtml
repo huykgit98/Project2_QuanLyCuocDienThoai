@@ -14,11 +14,15 @@
             <!-- /.col-lg-12 -->
 
         </div>
+
         <div class="row" id="dulieu">
             <table class="table table-striped table-bordered table-hover">
                 <tr class="info">
                     <th>
-                        Loại Hóa Đơn
+                        Tên Khách Hàng
+                    </th>
+                    <th>
+                        SĐT
                     </th>
                     <th>
                         Ngày Xuất
@@ -40,36 +44,39 @@
                 </tr>
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>
-                            Hóa Đơn Thu Phí Dịch Vụ
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.invoice_date)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.date_export)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.date_cut)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.postage)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.fare)
-                        </td>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SIM.CUSTOMER.name_cus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SIM.phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.invoice_date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.date_export)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.date_cut)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.postage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fare)
+                    </td>
 
-                        @if (item.status.Equals(true))
-                        {
-                            <td>Đã thanh toán</td>
-                        }
-                        else
-                        {
-                            <td>Chưa thanh toán</td>}
-                        <td>@Html.ActionLink("Chi tiết", "../Home/Detail", new { simID = item.id_sim, kiSD = item.date_export })</td>
+                    @if (item.status.Equals(true))
+                    {
+                        <td>Đã thanh toán</td>
+                    }
+                    else
+                    {
+                        <td>Chưa thanh toán</td>}
+                    <td>@Html.ActionLink("Chi tiết", "../Home/Detail", new { simID = item.id_sim, kiSD = item.date_export })</td>
 
-                    </tr>
+                </tr>
                 }
             </table>
         </div>
