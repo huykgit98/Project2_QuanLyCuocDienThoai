@@ -39,6 +39,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms">
+      <HintPath>..\..\..\..\Desktop\XDPMMHPL_Thu3Tiet8_Nhom04\winform\project1_QLBH_3layer\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -113,11 +119,39 @@
     <Compile Include="DetailsSimGUI.Designer.cs">
       <DependentUpon>DetailsSimGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="DSInHD.cs">
+      <DependentUpon>DSInHD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSInHD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSInHD.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FareGUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FareGUI.Designer.cs">
       <DependentUpon>FareGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InHDHDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InHDHDong.Designer.cs">
+      <DependentUpon>InHDHDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InHDHopDong.cs">
+      <DependentUpon>InHDHopDong.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InHDHopDong1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InHDHopDong.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InHoaDon.Designer.cs">
+      <DependentUpon>InHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Main_GUI.cs">
       <SubType>Form</SubType>
@@ -133,6 +167,7 @@
     <Compile Include="SimGUI.Designer.cs">
       <DependentUpon>SimGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="AddBillGUI.resx">
       <DependentUpon>AddBillGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +201,12 @@
     <EmbeddedResource Include="FareGUI.resx">
       <DependentUpon>FareGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InHDHDong.resx">
+      <DependentUpon>InHDHDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InHoaDon.resx">
+      <DependentUpon>InHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main_GUI.resx">
       <DependentUpon>Main_GUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,9 +219,33 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportInHoaDon.rdlc" />
+    <EmbeddedResource Include="rpHDHopDong.rdlc" />
     <EmbeddedResource Include="SimGUI.resx">
       <DependentUpon>SimGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DSInHD.xsc">
+      <DependentUpon>DSInHD.xsd</DependentUpon>
+    </None>
+    <None Include="DSInHD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSInHD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSInHD.xss">
+      <DependentUpon>DSInHD.xsd</DependentUpon>
+    </None>
+    <None Include="InHDHopDong.xsc">
+      <DependentUpon>InHDHopDong.xsd</DependentUpon>
+    </None>
+    <None Include="InHDHopDong.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InHDHopDong1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="InHDHopDong.xss">
+      <DependentUpon>InHDHopDong.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -204,6 +269,21 @@
       <Project>{2a071673-dce5-43a4-81a7-9201b8882422}</Project>
       <Name>WebMVC</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -268,6 +268,7 @@
             this.btnInHoaDon.TabIndex = 22;
             this.btnInHoaDon.Text = "In Hóa Đơn";
             this.btnInHoaDon.UseVisualStyleBackColor = true;
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
             // 
             // ContractGUI
             // 

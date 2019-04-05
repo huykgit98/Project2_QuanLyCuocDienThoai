@@ -230,5 +230,12 @@ namespace GUI_WinForm
         {
 
         }
+
+        private void btnInHoaDon_Click(object sender, EventArgs e)
+        {
+            InHDHDong frm = new InHDHDong();
+            frm.MaHopDong = txtMaHopDong.Text;
+            frm.Show();
+        }
     }
 }

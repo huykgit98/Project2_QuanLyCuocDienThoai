@@ -85,13 +85,14 @@ namespace GUI_WinForm
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            check_payment();
             inHoaDon();
         }
 
         private void inHoaDon()
         {
-            throw new NotImplementedException();
+            InHoaDon frm = new InHoaDon();
+            frm.Mahd = txtMaHD.Text;
+            frm.Show();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

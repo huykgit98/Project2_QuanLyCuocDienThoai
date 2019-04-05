@@ -226,7 +226,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(418, 17);
+            this.btnXoa.Location = new System.Drawing.Point(384, 16);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 20;
@@ -236,7 +236,7 @@
             // 
             // btnCatSim
             // 
-            this.btnCatSim.Location = new System.Drawing.Point(337, 16);
+            this.btnCatSim.Location = new System.Drawing.Point(303, 16);
             this.btnCatSim.Name = "btnCatSim";
             this.btnCatSim.Size = new System.Drawing.Size(75, 23);
             this.btnCatSim.TabIndex = 21;
@@ -248,9 +248,9 @@
             // 
             this.btnIn.Location = new System.Drawing.Point(226, 16);
             this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(105, 23);
+            this.btnIn.Size = new System.Drawing.Size(72, 23);
             this.btnIn.TabIndex = 22;
-            this.btnIn.Text = "Thanh Toán Và In";
+            this.btnIn.Text = "In Hóa Đơn";
             this.btnIn.UseVisualStyleBackColor = true;
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
@@ -273,7 +273,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(499, 17);
+            this.btnRefresh.Location = new System.Drawing.Point(465, 16);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 25;
