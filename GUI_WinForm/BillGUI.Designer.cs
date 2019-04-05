@@ -54,7 +54,7 @@
             this.txtTim = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTBDinhChi = new System.Windows.Forms.Button();
             this.dgvDSHD = new System.Windows.Forms.DataGridView();
             this.btnBackHome = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -283,7 +283,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnTBDinhChi);
             this.groupBox1.Controls.Add(this.dgvDSHD);
             this.groupBox1.Controls.Add(this.txtTim);
             this.groupBox1.Controls.Add(this.btnThanhToan);
@@ -299,14 +299,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Hóa Đơn";
             // 
-            // button1
+            // btnTBDinhChi
             // 
-            this.button1.Location = new System.Drawing.Point(45, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 23);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Gửi TB Đình Chỉ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTBDinhChi.Location = new System.Drawing.Point(45, 16);
+            this.btnTBDinhChi.Name = "btnTBDinhChi";
+            this.btnTBDinhChi.Size = new System.Drawing.Size(94, 23);
+            this.btnTBDinhChi.TabIndex = 27;
+            this.btnTBDinhChi.Text = "Gửi TB Đình Chỉ";
+            this.btnTBDinhChi.UseVisualStyleBackColor = true;
+            this.btnTBDinhChi.Click += new System.EventHandler(this.btnTBDinhChi_Click);
             // 
             // dgvDSHD
             // 
@@ -412,7 +413,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvDSHD;
         private System.Windows.Forms.Button btnBackHome;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTBDinhChi;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtInvoiceDate;
     }

@@ -18,6 +18,8 @@ namespace GUI_WinForm
         DetailBLL detailbll = new DetailBLL();
         SimBLL simbll = new SimBLL();
         ContractBLL contractbll = new ContractBLL();
+        CustomerBLL customer = new CustomerBLL();
+
         public BillGUI()
         {
             InitializeComponent();
@@ -257,5 +259,24 @@ namespace GUI_WinForm
             }
         }
 
+        private void btnTBDinhChi_Click(object sender, EventArgs e)
+        {
+            var Id_SIM = txtMaSim.Text;
+            var date_export = new DateTime(Convert.ToDateTime(txtNgayLapPhieu.Text).Year, Convert.ToDateTime(txtNgayLapPhieu.Text).Day, Convert.ToDateTime(txtNgayLapPhieu.Text).Month);
+            var invoice_date = new DateTime(Convert.ToDateTime(txtInvoiceDate.Text).Year, Convert.ToDateTime(txtInvoiceDate.Text).Day, Convert.ToDateTime(txtInvoiceDate.Text).Month);
+            var date_cut = invoice_date.AddMonths(1);
+            var date_endUse = date_export.AddMonths(1);
+            var TotalFare = detailbll.GetFare(Id_SIM, date_export, date_endUse);
+
+            // Gửi email để thông báo                
+            string id_customer = simbll.getIDcustomer_in_Sim(Id_SIM);
+            string email = customer.getEmail_in_Customer(id_customer);
+            string name_customer = customer.getName_in_Customer(id_customer);
+
+
+            billbll.SendBillByEmail1(email, name_customer, Id_SIM, date_export, invoice_date, date_cut, 50000, TotalFare + Convert.ToInt32(txtPhiThueBao.Text));
+            // Lưu vào database
+            Print_MessageBox("Gửi thành công!", "Thông báo gửi");
+        }
     }
 }

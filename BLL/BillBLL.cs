@@ -55,5 +55,10 @@ namespace BLL
             bill_dal.setBill(id_sim, date_ex, invoice_date, date_cut, postage, fare, false);
             return bill_dal.SendBillByEmail(toMail, name_customer);
         }
+        public bool SendBillByEmail1(string toMail, string name_customer, string id_sim, DateTime date_ex, DateTime invoice_date, DateTime date_cut, int postage, int fare)
+        {
+            bill_dal.setBill(id_sim, date_ex, invoice_date, date_cut, postage, fare, false);
+            return bill_dal.SendBillByEmail1(toMail, name_customer);
+        }
     }
 }

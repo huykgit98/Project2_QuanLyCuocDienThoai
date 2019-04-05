@@ -121,55 +121,9 @@ namespace DAL
             mail.Subject = "Thông báo đăng kí sử dụng dịch vụ viễn thông";
             mail.IsBodyHtml = true;
 
-            string htmlBody = @"
-            <div style='float:left;'>
-		        <div style='float:left; width:100%; padding: 2% 2%; border:1px solid #4286f4; color:white; font-size: 30px; border-top-left-radius: 10px; border-top-right-radius:10px'>
-			        Thanh toán cước điện thoại hàng tháng
-		        </div>
-		        <div style='float:left; width:100%; background-color:#ffffff; padding: 2% 2%; border:1px solid#4286f4;'>
-			        <div style='float:left; width:100%; color:#cc0000; font-size:14px;'>Đây là email tự động từ hệ thống, vui lòng không phản hồi (reply) lại email này</div>
-			        <div style='float:left; width:100%;'>
-				        <p>
-					        <strong>Kính gửi đồng chí: " + name_customer + @"</strong>
-					        <br /> 
-				        </p>
-			        </div>
-			        <div style='float:left; width:100%; padding: 2% 2%;'>
-				        <table style='border:3px solid #cc0000; width: 90%;'>
-                            <tr>
-						        <td>Ngày Đăng Ký:</td>
-						        <td><span style='font-weight: bold;'>" + contract.date_register.ToString() + @"</span></td>
-					        </tr>
-					        <tr>
-						        <td>Số điện thoại đăng ký:</td>
-						        <td><span style='font-weight: bold;'><span style='font-weight: bold;'>" + contract.SIM.phone.ToString() + @"</span></td>
-					        </tr>					        
-					        <tr>
-						        <td>Phí đăng kí:</td>
-						        <td><span style='font-weight: bold;'>" + contract.fee.ToString() + @" VNĐ</span></td>
-					        </tr>
-					        <tr>
-						        <td>Tổng tiền:</td>
-						        <td><span style='font-weight: bold;'>" + contract.fee.ToString() + @"</span></td>
-					        </tr>
-				        </table>			
-			        </div>
-			        <div style='float:left; width:100%; padding: 2% 0%;' background-color:#ffffff; font-weight: bold;'>
-				        Nếu quý khách có thắc mắc vấn đề gì có thể liên hệ qua <span style='color: #cc0000'> 0387134747 (huy nguyen) </span>. hoặc có thể đi tới địa chỉ của dịch vụ chúng tôi.
-			        </div>
-			        <div style='float:left; width:100%; padding: 2% 0%;' background-color:#ffffff;'>
-				        Thân trọng kính chào ! <br />
-				        <strong>Dịch vụ cước điện thoại Nhóm 04</strong>
-			        </div>                    
-		        </div>	
-                <div style='float:left; width:100%; padding: 0% 2%; border:1px solid #4286f4; background-color:#4286f4;'>
-			        <div style='float:left; width:3%;'>
-			        </div>
-			        <div style='float:left; width:50%; padding-top: 0.2%; color: white'>Nhóm 04 MHPL</div>
-		        </div>	
-	        </div>";
+           
 
-            mail.Body = htmlBody;
+            mail.Body = "Quý Khách đã kích hoạt thành công, phí đăng ký là 50.000 VNĐ!";
             client.Send(mail);
             return true;
         }
