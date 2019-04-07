@@ -59,6 +59,7 @@
             this.btnBackHome = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtInvoiceDate = new System.Windows.Forms.TextBox();
+            this.btnXemCTSD = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).BeginInit();
             this.SuspendLayout();
@@ -206,7 +207,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(481, 169);
+            this.btnThem.Location = new System.Drawing.Point(430, 169);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(94, 23);
             this.btnThem.TabIndex = 17;
@@ -283,7 +284,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnTBDinhChi);
+            this.groupBox1.Controls.Add(this.btnXemCTSD);
             this.groupBox1.Controls.Add(this.dgvDSHD);
             this.groupBox1.Controls.Add(this.txtTim);
             this.groupBox1.Controls.Add(this.btnThanhToan);
@@ -301,7 +302,7 @@
             // 
             // btnTBDinhChi
             // 
-            this.btnTBDinhChi.Location = new System.Drawing.Point(45, 16);
+            this.btnTBDinhChi.Location = new System.Drawing.Point(530, 168);
             this.btnTBDinhChi.Name = "btnTBDinhChi";
             this.btnTBDinhChi.Size = new System.Drawing.Size(94, 23);
             this.btnTBDinhChi.TabIndex = 27;
@@ -321,7 +322,7 @@
             // 
             // btnBackHome
             // 
-            this.btnBackHome.Location = new System.Drawing.Point(581, 169);
+            this.btnBackHome.Location = new System.Drawing.Point(630, 168);
             this.btnBackHome.Name = "btnBackHome";
             this.btnBackHome.Size = new System.Drawing.Size(159, 23);
             this.btnBackHome.TabIndex = 27;
@@ -345,11 +346,22 @@
             this.txtInvoiceDate.Size = new System.Drawing.Size(253, 20);
             this.txtInvoiceDate.TabIndex = 29;
             // 
+            // btnXemCTSD
+            // 
+            this.btnXemCTSD.Location = new System.Drawing.Point(67, 16);
+            this.btnXemCTSD.Name = "btnXemCTSD";
+            this.btnXemCTSD.Size = new System.Drawing.Size(72, 23);
+            this.btnXemCTSD.TabIndex = 27;
+            this.btnXemCTSD.Text = "Xem CTSD";
+            this.btnXemCTSD.UseVisualStyleBackColor = true;
+            this.btnXemCTSD.Click += new System.EventHandler(this.btnXemCTSD_Click);
+            // 
             // BillGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 450);
+            this.Controls.Add(this.btnTBDinhChi);
             this.Controls.Add(this.txtInvoiceDate);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnBackHome);
@@ -416,5 +428,6 @@
         private System.Windows.Forms.Button btnTBDinhChi;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtInvoiceDate;
+        private System.Windows.Forms.Button btnXemCTSD;
     }
 }

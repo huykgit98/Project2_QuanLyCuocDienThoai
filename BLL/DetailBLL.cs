@@ -12,6 +12,11 @@ namespace BLL
         {
             return detail_dal.GetAll();
         }
+        public IEnumerable<DETAIL> GetAll(string maSim, DateTime kiSD, DateTime hanSD)
+        {
+           // hanSD = kiSD.AddMonths(1);
+            return detail_dal.GetAll(maSim, kiSD, hanSD);
+        }
         public string Create(string id_sim, DateTime start, DateTime stop)
         {
             detail_dal.setDetail(id_sim, start, stop);

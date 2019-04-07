@@ -38,6 +38,15 @@ namespace DAL
             this.detail.minute_23hto7h = minutea23;
             this.detail.fare = fare;
         }
+        public IEnumerable<DETAIL> GetAll(string masim, DateTime kisd, DateTime hansd)
+        {
+           // hansd = kisd.;
+            // List<DETAIL> detail = db.DETAILs.Where(p => p.id_sim.).ToList();
+
+            //List<DETAIL> detail = db.DETAILs.ToList();
+            List<DETAIL> detail = db.DETAILs.Where(p => p.id_sim.Contains(masim) && p.time_start >= kisd && p.time_stop <= hansd).ToList(); 
+            return detail;
+        }
         public IEnumerable<DETAIL> GetAll()
         {
             List<DETAIL> detail = db.DETAILs.ToList();
@@ -105,6 +114,7 @@ namespace DAL
                               SimID = g.Key,
                               TotalFare = g.Sum(x => x.fare)
                           };
+           
             return Convert.ToInt32(results.Select(a => a.TotalFare).SingleOrDefault());
         }
         public int GetTotalUseMins(string sim_id, DateTime date_export, DateTime date_cut)

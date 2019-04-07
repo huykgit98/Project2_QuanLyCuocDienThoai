@@ -42,7 +42,7 @@
             this.dgvCTSD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCTSD.Location = new System.Drawing.Point(3, 69);
             this.dgvCTSD.Name = "dgvCTSD";
-            this.dgvCTSD.Size = new System.Drawing.Size(794, 378);
+            this.dgvCTSD.Size = new System.Drawing.Size(764, 378);
             this.dgvCTSD.TabIndex = 0;
             this.dgvCTSD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvCTSD.Click += new System.EventHandler(this.dgvCTSD_Click);
@@ -98,7 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(769, 450);
             this.Controls.Add(this.btnBackHome);
             this.Controls.Add(this.txtTim);
             this.Controls.Add(this.btnRefresh);

@@ -279,5 +279,14 @@ namespace GUI_WinForm
             // Lưu vào database
             Print_MessageBox("Gửi thành công!", "Thông báo gửi");
         }
+
+        private void btnXemCTSD_Click(object sender, EventArgs e)
+        {
+            DetailUse frm =new DetailUse();
+            frm.MaSim = txtMaSim.Text;
+            frm.KiSD =  new DateTime(Convert.ToDateTime(txtNgayLapPhieu.Text).Year, Convert.ToDateTime(txtNgayLapPhieu.Text).Day, Convert.ToDateTime(txtNgayLapPhieu.Text).Month);
+
+            frm.Show();
+        }
     }
 }
