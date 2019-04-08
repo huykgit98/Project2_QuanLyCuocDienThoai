@@ -54,6 +54,22 @@ namespace BLL
         {
             return sim_dal.checkPhoneNumber();
         }
+        //update sim k có makh
+        public string Update(string id, string phonenumber, bool status)
+        {
+            sim_dal.setSim1(id, phonenumber, status);
+            if (checkPhoneNumber())
+                return "Số điện thoại bị trùng";
+            else if (phonenumber.ToString().Length != 9)
+            {
+                sim_dal.Update();
+                return "Đã thay đổi thành công !";
+            }
+            else
+                return "Không thể sửa, Số điện thoại không hợp lệ";
+
+        }
+        //update sim  có makh
         public string Update(string id, string id_cus, string phonenumber, bool status)
         {
             sim_dal.setSim(id, id_cus, phonenumber, status);

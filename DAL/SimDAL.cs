@@ -23,6 +23,12 @@ namespace DAL
             this.sim.id_cus = cus_id;
             this.sim.status = status;
         }
+        public void setSim1(string id, string phonenumber, bool status)
+        {
+            this.sim.id = id;
+            this.sim.phone = phonenumber;
+            this.sim.status = status;
+        }
         public void SetSim(string cus_id, string phonenumber, bool status)
         {
             this.sim.id_cus = cus_id;

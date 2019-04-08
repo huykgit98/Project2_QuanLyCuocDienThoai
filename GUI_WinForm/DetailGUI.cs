@@ -69,6 +69,7 @@ namespace GUI_WinForm
             dgvCTSD.Columns[5].HeaderText = "Số phút khung giờ phụ";
             dgvCTSD.Columns[6].HeaderText = "Tổng giá cước";
             dgvCTSD.Columns[7].Visible = false;
+            
 
         }
 

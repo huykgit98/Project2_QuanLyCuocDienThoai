@@ -53,6 +53,7 @@ namespace GUI_WinForm
         private void loadDataTable()
         {
             dgvDSKH.DataSource = new BindingSource(customers.GetAll(), "");
+            
             dgvDSKH.Columns[0].HeaderText = "Mã KH";
             dgvDSKH.Columns[1].HeaderText = "Tên KH";
             dgvDSKH.Columns[2].HeaderText = "CMND";
@@ -138,13 +139,16 @@ namespace GUI_WinForm
             {
                 int idx = dgvDSKH.CurrentRow.Index;
                 dgvDSKH.DataSource = new BindingSource(customers.SearchByName(txtTimKH.Text), "");
-                txtIDKH.Text = dgvDSKH.Rows[idx].Cells[0].Value.ToString();
+                txtIDKH.Text = txtTenKH.Text = txtCMND.Text = txtNgheNghiep.Text = txtChucVu.Text = txtDiaChi.Text = txtEmail.Text = "";
+
+                /*txtIDKH.Text = dgvDSKH.Rows[idx].Cells[0].Value.ToString();
                 txtTenKH.Text = dgvDSKH.Rows[idx].Cells[1].Value.ToString();
                 txtCMND.Text = dgvDSKH.Rows[idx].Cells[2].Value.ToString();
                 txtNgheNghiep.Text = dgvDSKH.Rows[idx].Cells[3].Value.ToString();
                 txtChucVu.Text = dgvDSKH.Rows[idx].Cells[4].Value.ToString();
                 txtDiaChi.Text = dgvDSKH.Rows[idx].Cells[5].Value.ToString();
                 txtEmail.Text = dgvDSKH.Rows[idx].Cells[6].Value.ToString();
+            */
             }
         }
         private void edit()
@@ -174,6 +178,53 @@ namespace GUI_WinForm
             {
                 e.Handled = true;
             }
+        }
+
+        private void dgvDSKH_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {/*
+            DataGridViewColumn newColumn = dgvDSKH.Columns[e.ColumnIndex];
+            DataGridViewColumn oldColumn = dgvDSKH.SortedColumn;
+            ListSortDirection direction;
+
+            // If oldColumn is null, then the DataGridView is not sorted.
+            if (oldColumn != null)
+            {
+                // Sort the same column again, reversing the SortOrder.
+                if (oldColumn == newColumn &&
+                    dgvDSKH.SortOrder == SortOrder.Ascending)
+                {
+                    direction = ListSortDirection.Descending;
+                }
+                else
+                {
+                    // Sort a new column and remove the old SortGlyph.
+                    direction = ListSortDirection.Ascending;
+                    oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
+                }
+            }
+            else
+            {
+                direction = ListSortDirection.Ascending;
+            }
+
+            // Sort the selected column.
+            dgvDSKH.Sort(newColumn, direction);
+            newColumn.HeaderCell.SortGlyphDirection =
+                direction == ListSortDirection.Ascending ?
+                SortOrder.Ascending : SortOrder.Descending;*/
+        }
+
+        private void dgvDSKH_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {/*
+            foreach (DataGridViewColumn column in dgvDSKH.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.Programmatic;
+            }*/
+        }
+
+        private void dgvDSKH_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

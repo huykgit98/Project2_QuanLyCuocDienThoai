@@ -57,7 +57,7 @@
             this.groupBox2.Controls.Add(this.dgvDSSim);
             this.groupBox2.Location = new System.Drawing.Point(13, 149);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(775, 301);
+            this.groupBox2.Size = new System.Drawing.Size(459, 301);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách SIM";
@@ -69,7 +69,7 @@
             this.dgvDSSim.Location = new System.Drawing.Point(3, 16);
             this.dgvDSSim.Name = "dgvDSSim";
             this.dgvDSSim.RowHeadersWidth = 50;
-            this.dgvDSSim.Size = new System.Drawing.Size(769, 282);
+            this.dgvDSSim.Size = new System.Drawing.Size(453, 282);
             this.dgvDSSim.TabIndex = 0;
             this.dgvDSSim.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSSim_CellContentClick);
             this.dgvDSSim.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDSSim_CellFormatting);
@@ -77,7 +77,7 @@
             // 
             // btnclear
             // 
-            this.btnclear.Location = new System.Drawing.Point(674, 52);
+            this.btnclear.Location = new System.Drawing.Point(340, 75);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(75, 23);
             this.btnclear.TabIndex = 46;
@@ -87,15 +87,14 @@
             // 
             // txtTimSim
             // 
-            this.txtTimSim.Location = new System.Drawing.Point(471, 106);
+            this.txtTimSim.Location = new System.Drawing.Point(229, 122);
             this.txtTimSim.Name = "txtTimSim";
-            this.txtTimSim.ReadOnly = true;
             this.txtTimSim.Size = new System.Drawing.Size(186, 20);
             this.txtTimSim.TabIndex = 45;
             // 
             // btnSuaSim
             // 
-            this.btnSuaSim.Location = new System.Drawing.Point(65, 103);
+            this.btnSuaSim.Location = new System.Drawing.Point(99, 75);
             this.btnSuaSim.Name = "btnSuaSim";
             this.btnSuaSim.Size = new System.Drawing.Size(75, 23);
             this.btnSuaSim.TabIndex = 44;
@@ -105,7 +104,7 @@
             // 
             // btnXoaSim
             // 
-            this.btnXoaSim.Location = new System.Drawing.Point(146, 103);
+            this.btnXoaSim.Location = new System.Drawing.Point(178, 75);
             this.btnXoaSim.Name = "btnXoaSim";
             this.btnXoaSim.Size = new System.Drawing.Size(75, 23);
             this.btnXoaSim.TabIndex = 43;
@@ -115,7 +114,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(308, 104);
+            this.btnRefresh.Location = new System.Drawing.Point(259, 75);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 42;
@@ -125,7 +124,7 @@
             // 
             // btnTimSim
             // 
-            this.btnTimSim.Location = new System.Drawing.Point(663, 107);
+            this.btnTimSim.Location = new System.Drawing.Point(421, 122);
             this.btnTimSim.Name = "btnTimSim";
             this.btnTimSim.Size = new System.Drawing.Size(33, 20);
             this.btnTimSim.TabIndex = 40;
@@ -135,7 +134,7 @@
             // 
             // btnThemSim
             // 
-            this.btnThemSim.Location = new System.Drawing.Point(593, 52);
+            this.btnThemSim.Location = new System.Drawing.Point(18, 75);
             this.btnThemSim.Name = "btnThemSim";
             this.btnThemSim.Size = new System.Drawing.Size(75, 23);
             this.btnThemSim.TabIndex = 39;
@@ -145,7 +144,7 @@
             // 
             // btnXemMaKH
             // 
-            this.btnXemMaKH.Location = new System.Drawing.Point(593, 22);
+            this.btnXemMaKH.Location = new System.Drawing.Point(399, 12);
             this.btnXemMaKH.Name = "btnXemMaKH";
             this.btnXemMaKH.Size = new System.Drawing.Size(57, 20);
             this.btnXemMaKH.TabIndex = 38;
@@ -156,7 +155,7 @@
             // rdbDaSD
             // 
             this.rdbDaSD.AutoSize = true;
-            this.rdbDaSD.Location = new System.Drawing.Point(399, 75);
+            this.rdbDaSD.Location = new System.Drawing.Point(392, 42);
             this.rdbDaSD.Name = "rdbDaSD";
             this.rdbDaSD.Size = new System.Drawing.Size(80, 17);
             this.rdbDaSD.TabIndex = 37;
@@ -167,7 +166,7 @@
             // 
             this.rdbChuaSD.AutoSize = true;
             this.rdbChuaSD.Checked = true;
-            this.rdbChuaSD.Location = new System.Drawing.Point(399, 52);
+            this.rdbChuaSD.Location = new System.Drawing.Point(248, 42);
             this.rdbChuaSD.Name = "rdbChuaSD";
             this.rdbChuaSD.Size = new System.Drawing.Size(138, 17);
             this.rdbChuaSD.TabIndex = 36;
@@ -177,30 +176,30 @@
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(113, 50);
+            this.txtSDT.Location = new System.Drawing.Point(67, 40);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(186, 20);
+            this.txtSDT.Size = new System.Drawing.Size(107, 20);
             this.txtSDT.TabIndex = 35;
             // 
             // txtMaKH
             // 
-            this.txtMaKH.Location = new System.Drawing.Point(399, 22);
+            this.txtMaKH.Location = new System.Drawing.Point(274, 12);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(188, 20);
+            this.txtMaKH.Size = new System.Drawing.Size(119, 20);
             this.txtMaKH.TabIndex = 34;
             // 
             // txtMaSim
             // 
-            this.txtMaSim.Location = new System.Drawing.Point(113, 22);
+            this.txtMaSim.Location = new System.Drawing.Point(67, 12);
             this.txtMaSim.Name = "txtMaSim";
             this.txtMaSim.ReadOnly = true;
-            this.txtMaSim.Size = new System.Drawing.Size(186, 20);
+            this.txtMaSim.Size = new System.Drawing.Size(107, 20);
             this.txtMaSim.TabIndex = 33;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(61, 54);
+            this.label4.Location = new System.Drawing.Point(15, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 32;
@@ -209,7 +208,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(305, 22);
+            this.label3.Location = new System.Drawing.Point(180, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 13);
             this.label3.TabIndex = 31;
@@ -218,7 +217,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(305, 54);
+            this.label2.Location = new System.Drawing.Point(180, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 30;
@@ -227,7 +226,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(61, 22);
+            this.label1.Location = new System.Drawing.Point(15, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 29;
@@ -235,7 +234,7 @@
             // 
             // btnBackHome
             // 
-            this.btnBackHome.Location = new System.Drawing.Point(674, 4);
+            this.btnBackHome.Location = new System.Drawing.Point(99, 120);
             this.btnBackHome.Name = "btnBackHome";
             this.btnBackHome.Size = new System.Drawing.Size(114, 23);
             this.btnBackHome.TabIndex = 47;
@@ -247,7 +246,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(483, 450);
             this.Controls.Add(this.btnBackHome);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnclear);
@@ -268,6 +268,7 @@
             this.Controls.Add(this.rdbChuaSD);
             this.Controls.Add(this.rdbDaSD);
             this.Name = "SimGUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Quản Lý SIM";
             this.Load += new System.EventHandler(this.SimGUI_Load);
             this.groupBox2.ResumeLayout(false);

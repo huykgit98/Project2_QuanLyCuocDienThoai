@@ -60,7 +60,7 @@ namespace GUI_WinForm
                 string result = contractbll.Create(txtMaSim.Text, Convert.ToDateTime(txtNgayDK.Text), Convert.ToInt32(txtPhi.Text), status);
                 simbll.Update_ID_Customer(txtMaSim.Text, txtMaKH.Text, status);
                 contractbll.SendContractByEmail(email, name_customer, txtMaSim.Text, date_regis, Convert.ToInt32(txtPhi.Text));
-                Print_MessageBox(result, "Thông báo thêm");
+                Print_MessageBox("Thêm hợp đồng thành công và đã gửi email đăng ký sim!", "Thông báo thêm");
                 dgvKH.DataSource = new BindingSource(customer.GetAll(), "");
                 dgvSim.DataSource = new BindingSource(simbll.GetAll(), "");
             }
@@ -144,6 +144,11 @@ namespace GUI_WinForm
             {
                 textboxs[i].Text = "";
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

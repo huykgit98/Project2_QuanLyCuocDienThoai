@@ -61,7 +61,7 @@
             this.groupBox2.Controls.Add(this.dgvDSKH);
             this.groupBox2.Location = new System.Drawing.Point(3, 196);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(796, 253);
+            this.groupBox2.Size = new System.Drawing.Size(693, 253);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Khách Hàng";
@@ -71,15 +71,18 @@
             this.dgvDSKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSKH.Location = new System.Drawing.Point(0, 19);
             this.dgvDSKH.Name = "dgvDSKH";
-            this.dgvDSKH.Size = new System.Drawing.Size(796, 234);
+            this.dgvDSKH.Size = new System.Drawing.Size(693, 234);
             this.dgvDSKH.TabIndex = 0;
+            this.dgvDSKH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSKH_CellContentClick);
+            this.dgvDSKH.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDSKH_ColumnHeaderMouseClick);
+            this.dgvDSKH.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvDSKH_DataBindingComplete);
             this.dgvDSKH.Click += new System.EventHandler(this.dgvDSKH_Click);
             // 
             // btnTimKH
             // 
-            this.btnTimKH.Location = new System.Drawing.Point(712, 122);
+            this.btnTimKH.Location = new System.Drawing.Point(612, 176);
             this.btnTimKH.Name = "btnTimKH";
-            this.btnTimKH.Size = new System.Drawing.Size(75, 23);
+            this.btnTimKH.Size = new System.Drawing.Size(75, 20);
             this.btnTimKH.TabIndex = 43;
             this.btnTimKH.Text = "Tìm";
             this.btnTimKH.UseVisualStyleBackColor = true;
@@ -87,14 +90,14 @@
             // 
             // txtTimKH
             // 
-            this.txtTimKH.Location = new System.Drawing.Point(511, 125);
+            this.txtTimKH.Location = new System.Drawing.Point(403, 176);
             this.txtTimKH.Name = "txtTimKH";
-            this.txtTimKH.Size = new System.Drawing.Size(195, 20);
+            this.txtTimKH.Size = new System.Drawing.Size(206, 20);
             this.txtTimKH.TabIndex = 42;
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(258, 122);
+            this.btnRefresh.Location = new System.Drawing.Point(172, 152);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 41;
@@ -104,7 +107,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(665, 69);
+            this.btnClear.Location = new System.Drawing.Point(431, 93);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 40;
@@ -114,7 +117,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(177, 122);
+            this.btnXoa.Location = new System.Drawing.Point(91, 152);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 38;
@@ -124,7 +127,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(96, 122);
+            this.btnSua.Location = new System.Drawing.Point(10, 152);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 37;
@@ -134,7 +137,7 @@
             // 
             // btnThemKH
             // 
-            this.btnThemKH.Location = new System.Drawing.Point(584, 68);
+            this.btnThemKH.Location = new System.Drawing.Point(350, 93);
             this.btnThemKH.Name = "btnThemKH";
             this.btnThemKH.Size = new System.Drawing.Size(75, 23);
             this.btnThemKH.TabIndex = 36;
@@ -160,29 +163,29 @@
             // 
             this.txtTenKH.Location = new System.Drawing.Point(350, 15);
             this.txtTenKH.Name = "txtTenKH";
-            this.txtTenKH.Size = new System.Drawing.Size(206, 20);
+            this.txtTenKH.Size = new System.Drawing.Size(337, 20);
             this.txtTenKH.TabIndex = 33;
             // 
             // txtCMND
             // 
             this.txtCMND.Location = new System.Drawing.Point(350, 42);
             this.txtCMND.Name = "txtCMND";
-            this.txtCMND.Size = new System.Drawing.Size(206, 20);
+            this.txtCMND.Size = new System.Drawing.Size(337, 20);
             this.txtCMND.TabIndex = 32;
             this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCMND_KeyPress);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(622, 15);
+            this.txtEmail.Location = new System.Drawing.Point(91, 97);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(165, 20);
+            this.txtEmail.Size = new System.Drawing.Size(195, 20);
             this.txtEmail.TabIndex = 31;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(350, 68);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(206, 20);
+            this.txtDiaChi.Size = new System.Drawing.Size(337, 20);
             this.txtDiaChi.TabIndex = 30;
             // 
             // txtIDKH
@@ -196,7 +199,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(581, 19);
+            this.label7.Location = new System.Drawing.Point(16, 100);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 28;
@@ -258,9 +261,9 @@
             // 
             // btnBackHome
             // 
-            this.btnBackHome.Location = new System.Drawing.Point(96, 162);
+            this.btnBackHome.Location = new System.Drawing.Point(253, 152);
             this.btnBackHome.Name = "btnBackHome";
-            this.btnBackHome.Size = new System.Drawing.Size(237, 23);
+            this.btnBackHome.Size = new System.Drawing.Size(112, 23);
             this.btnBackHome.TabIndex = 44;
             this.btnBackHome.Text = "Về Màn Hình Chính";
             this.btnBackHome.UseVisualStyleBackColor = true;
@@ -270,7 +273,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(699, 450);
             this.Controls.Add(this.btnBackHome);
             this.Controls.Add(this.btnTimKH);
             this.Controls.Add(this.groupBox2);

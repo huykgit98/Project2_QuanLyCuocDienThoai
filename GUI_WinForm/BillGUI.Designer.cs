@@ -54,12 +54,12 @@
             this.txtTim = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnTBDinhChi = new System.Windows.Forms.Button();
+            this.btnXemCTSD = new System.Windows.Forms.Button();
             this.dgvDSHD = new System.Windows.Forms.DataGridView();
+            this.btnTBDinhChi = new System.Windows.Forms.Button();
             this.btnBackHome = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtInvoiceDate = new System.Windows.Forms.TextBox();
-            this.btnXemCTSD = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHD)).BeginInit();
             this.SuspendLayout();
@@ -267,9 +267,9 @@
             // 
             // txtTim
             // 
-            this.txtTim.Location = new System.Drawing.Point(590, 19);
+            this.txtTim.Location = new System.Drawing.Point(570, 19);
             this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(117, 20);
+            this.txtTim.Size = new System.Drawing.Size(137, 20);
             this.txtTim.TabIndex = 24;
             // 
             // btnRefresh
@@ -295,10 +295,30 @@
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Location = new System.Drawing.Point(1, 213);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(792, 237);
+            this.groupBox1.Size = new System.Drawing.Size(814, 237);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Hóa Đơn";
+            // 
+            // btnXemCTSD
+            // 
+            this.btnXemCTSD.Location = new System.Drawing.Point(67, 16);
+            this.btnXemCTSD.Name = "btnXemCTSD";
+            this.btnXemCTSD.Size = new System.Drawing.Size(72, 23);
+            this.btnXemCTSD.TabIndex = 27;
+            this.btnXemCTSD.Text = "Xem CTSD";
+            this.btnXemCTSD.UseVisualStyleBackColor = true;
+            this.btnXemCTSD.Click += new System.EventHandler(this.btnXemCTSD_Click);
+            // 
+            // dgvDSHD
+            // 
+            this.dgvDSHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSHD.Location = new System.Drawing.Point(22, 45);
+            this.dgvDSHD.Name = "dgvDSHD";
+            this.dgvDSHD.ReadOnly = true;
+            this.dgvDSHD.Size = new System.Drawing.Size(792, 192);
+            this.dgvDSHD.TabIndex = 26;
+            this.dgvDSHD.Click += new System.EventHandler(this.dgvDSHD_Click);
             // 
             // btnTBDinhChi
             // 
@@ -309,16 +329,6 @@
             this.btnTBDinhChi.Text = "Gửi TB Đình Chỉ";
             this.btnTBDinhChi.UseVisualStyleBackColor = true;
             this.btnTBDinhChi.Click += new System.EventHandler(this.btnTBDinhChi_Click);
-            // 
-            // dgvDSHD
-            // 
-            this.dgvDSHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSHD.Location = new System.Drawing.Point(0, 45);
-            this.dgvDSHD.Name = "dgvDSHD";
-            this.dgvDSHD.ReadOnly = true;
-            this.dgvDSHD.Size = new System.Drawing.Size(792, 192);
-            this.dgvDSHD.TabIndex = 26;
-            this.dgvDSHD.Click += new System.EventHandler(this.dgvDSHD_Click);
             // 
             // btnBackHome
             // 
@@ -346,21 +356,11 @@
             this.txtInvoiceDate.Size = new System.Drawing.Size(253, 20);
             this.txtInvoiceDate.TabIndex = 29;
             // 
-            // btnXemCTSD
-            // 
-            this.btnXemCTSD.Location = new System.Drawing.Point(67, 16);
-            this.btnXemCTSD.Name = "btnXemCTSD";
-            this.btnXemCTSD.Size = new System.Drawing.Size(72, 23);
-            this.btnXemCTSD.TabIndex = 27;
-            this.btnXemCTSD.Text = "Xem CTSD";
-            this.btnXemCTSD.UseVisualStyleBackColor = true;
-            this.btnXemCTSD.Click += new System.EventHandler(this.btnXemCTSD_Click);
-            // 
             // BillGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 450);
+            this.ClientSize = new System.Drawing.Size(817, 450);
             this.Controls.Add(this.btnTBDinhChi);
             this.Controls.Add(this.txtInvoiceDate);
             this.Controls.Add(this.label9);

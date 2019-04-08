@@ -181,10 +181,22 @@ namespace GUI_WinForm
                     status = false;
                 if (rdbDaSD.Checked == true)
                     status = true;
-                string result = simbll.Update(txtMaSim.Text, txtMaKH.Text, txtSDT.Text, status);
-                Print_MessageBox(result, "Thông báo sửa");
+                if (txtMaKH.Text == "")
+                {
+                    string result = simbll.Update(txtMaSim.Text, txtSDT.Text, status);
+                    Print_MessageBox(result, "Thông báo sửa");
+                }
+                else if(txtMaKH.Text!="")
+                {
+                    string result = simbll.Update(txtMaSim.Text,txtMaKH.Text, txtSDT.Text, status);
+                    Print_MessageBox(result, "Thông báo sửa");
+                }
+                else Print_MessageBox("Có lỗi xảy ra!", "Kết quả");
             }
-            catch { }
+            catch
+            {
+                Print_MessageBox("phải xóa hợp đồng trước!", "Kết quả");
+            }
         }
 
         // Function delete row
@@ -193,9 +205,17 @@ namespace GUI_WinForm
             DialogResult Dialogresult = MessageBox.Show("Bạn có chắc chắn xóa không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (Dialogresult == DialogResult.Yes)
             {
-                string result = simbll.Delete(txtMaSim.Text);
-                Print_MessageBox(result, "Thông báo xóa");
-                loadDataTable();
+                if (txtMaKH.Text == "")
+                {
+                    string result = simbll.Delete(txtMaSim.Text);
+                    Print_MessageBox(result, "Thông báo xóa");
+
+                    loadDataTable();
+                }
+                else Print_MessageBox("phải xóa hợp đồng liên quan trước!", "Kết quả");
+
+
+
             }
         }
 

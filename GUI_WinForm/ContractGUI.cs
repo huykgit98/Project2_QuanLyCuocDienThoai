@@ -14,6 +14,7 @@ namespace GUI_WinForm
 {
     public partial class ContractGUI : Form
     {
+    
         SimBLL simbll = new SimBLL();
         ContractBLL contractbll = new ContractBLL();
         public ContractGUI()
@@ -67,6 +68,8 @@ namespace GUI_WinForm
             dgvDSHD.Columns[3].HeaderText = "Phí";
             dgvDSHD.Columns[4].HeaderText = "Tình Trạng";
             dgvDSHD.Columns[5].Visible = false;
+
+
         }
 
         private void dgvDSHD_Click(object sender, EventArgs e)
@@ -148,7 +151,7 @@ namespace GUI_WinForm
         {
             edit();
             txtMaHopDong.Text = txtMaSim.Text = txtPhiDK.Text = txtTim.Text = "";
-            txtNgayDangKy.Text = DateTime.Now.ToString();
+            //txtNgayDangKy.Text = DateTime.Now.ToString();
             dgvDSHD.DataSource = new BindingSource(contractbll.GetAll(), "");
         }
 
@@ -159,6 +162,7 @@ namespace GUI_WinForm
         private void edit()
         {
             bool status = true;
+            var ngayDangKy = DateTime.Parse(txtNgayDangKy.Text);
             string id_customer = simbll.getIDcustomer_in_Sim(txtMaSim.Text);
             simbll.Update_ID_Customer(txtMaSim.Text, id_customer, true);
             if (rdbHuy.Checked==true)
@@ -166,7 +170,7 @@ namespace GUI_WinForm
                 status = false;
                 simbll.Update_ID_Customer(txtMaSim.Text, id_customer, false);
             }
-            if (System.DateTime.Parse(txtNgayDangKy.Text) > DateTime.Now.Date)
+            if (ngayDangKy > DateTime.Now.Date)
             {
                 Print_MessageBox("Ngày đăng ký không hợp lệ !", "Kết quả");
             }
@@ -237,5 +241,21 @@ namespace GUI_WinForm
             frm.MaHopDong = txtMaHopDong.Text;
             frm.Show();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void dgvDSHD_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+           
+            
+        }
+
+        private void dgvDSHD_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+        } 
     }
 }

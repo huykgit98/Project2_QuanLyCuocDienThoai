@@ -51,8 +51,8 @@
             // 
             this.groupBox1.Controls.Add(this.btnBackHome);
             this.groupBox1.Controls.Add(this.txtRefresh);
-            this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.txtTGKT);
+            this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.txtCuocPhi);
             this.groupBox1.Controls.Add(this.txtTGBD);
             this.groupBox1.Controls.Add(this.txtIDKhoangGio);
@@ -62,7 +62,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(1, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(798, 154);
+            this.groupBox1.Size = new System.Drawing.Size(448, 154);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cước Phí";
@@ -79,7 +79,7 @@
             // 
             // txtRefresh
             // 
-            this.txtRefresh.Location = new System.Drawing.Point(636, 118);
+            this.txtRefresh.Location = new System.Drawing.Point(230, 118);
             this.txtRefresh.Name = "txtRefresh";
             this.txtRefresh.Size = new System.Drawing.Size(75, 23);
             this.txtRefresh.TabIndex = 12;
@@ -89,7 +89,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(555, 118);
+            this.btnSua.Location = new System.Drawing.Point(149, 118);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 9;
@@ -99,30 +99,30 @@
             // 
             // txtTGKT
             // 
-            this.txtTGKT.Location = new System.Drawing.Point(491, 43);
+            this.txtTGKT.Location = new System.Drawing.Point(118, 62);
             this.txtTGKT.Name = "txtTGKT";
-            this.txtTGKT.Size = new System.Drawing.Size(232, 20);
+            this.txtTGKT.Size = new System.Drawing.Size(314, 20);
             this.txtTGKT.TabIndex = 8;
             // 
             // txtCuocPhi
             // 
-            this.txtCuocPhi.Location = new System.Drawing.Point(491, 17);
+            this.txtCuocPhi.Location = new System.Drawing.Point(118, 88);
             this.txtCuocPhi.Name = "txtCuocPhi";
-            this.txtCuocPhi.Size = new System.Drawing.Size(232, 20);
+            this.txtCuocPhi.Size = new System.Drawing.Size(314, 20);
             this.txtCuocPhi.TabIndex = 7;
             // 
             // txtTGBD
             // 
-            this.txtTGBD.Location = new System.Drawing.Point(110, 41);
+            this.txtTGBD.Location = new System.Drawing.Point(118, 40);
             this.txtTGBD.Name = "txtTGBD";
-            this.txtTGBD.Size = new System.Drawing.Size(232, 20);
+            this.txtTGBD.Size = new System.Drawing.Size(314, 20);
             this.txtTGBD.TabIndex = 6;
             // 
             // txtIDKhoangGio
             // 
-            this.txtIDKhoangGio.Location = new System.Drawing.Point(110, 17);
+            this.txtIDKhoangGio.Location = new System.Drawing.Point(118, 17);
             this.txtIDKhoangGio.Name = "txtIDKhoangGio";
-            this.txtIDKhoangGio.Size = new System.Drawing.Size(232, 20);
+            this.txtIDKhoangGio.Size = new System.Drawing.Size(314, 20);
             this.txtIDKhoangGio.TabIndex = 4;
             // 
             // label4
@@ -137,7 +137,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(382, 20);
+            this.label3.Location = new System.Drawing.Point(11, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 2;
@@ -146,7 +146,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(382, 46);
+            this.label2.Location = new System.Drawing.Point(6, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 13);
             this.label2.TabIndex = 1;
@@ -166,7 +166,7 @@
             this.groupBox2.Controls.Add(this.dgvDSCP);
             this.groupBox2.Location = new System.Drawing.Point(1, 172);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(798, 266);
+            this.groupBox2.Size = new System.Drawing.Size(448, 124);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Cước Phí";
@@ -176,7 +176,7 @@
             this.dgvDSCP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSCP.Location = new System.Drawing.Point(6, 19);
             this.dgvDSCP.Name = "dgvDSCP";
-            this.dgvDSCP.Size = new System.Drawing.Size(786, 267);
+            this.dgvDSCP.Size = new System.Drawing.Size(431, 96);
             this.dgvDSCP.TabIndex = 0;
             this.dgvDSCP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSCP_CellContentClick);
             this.dgvDSCP.Click += new System.EventHandler(this.dgvDSCP_Click);
@@ -185,7 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(445, 299);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FareGUI";
