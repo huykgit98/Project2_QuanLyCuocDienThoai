@@ -38,14 +38,14 @@
             this.dgvCTSD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCTSD.Location = new System.Drawing.Point(0, 0);
             this.dgvCTSD.Name = "dgvCTSD";
-            this.dgvCTSD.Size = new System.Drawing.Size(728, 450);
+            this.dgvCTSD.Size = new System.Drawing.Size(728, 194);
             this.dgvCTSD.TabIndex = 0;
             // 
             // DetailUse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 450);
+            this.ClientSize = new System.Drawing.Size(728, 194);
             this.Controls.Add(this.dgvCTSD);
             this.Name = "DetailUse";
             this.Text = "Chi Tiết Sử Dụng";

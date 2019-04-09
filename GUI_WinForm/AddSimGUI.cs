@@ -78,7 +78,7 @@ namespace GUI_WinForm
             }
             catch
             {
-                Print_MessageBox("Vui lòng nhập đầy đủ thông tin!", "Kết quả");
+                Print_MessageBox("Vui lòng nhập đầy đủ thông tin hoặc đúng định dạng!", "Kết quả");
             }
         }
 

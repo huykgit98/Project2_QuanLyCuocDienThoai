@@ -54,7 +54,7 @@ namespace GUI_WinForm
                 DateTime ndk = DateTime.ParseExact(txtNgayDK.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 int year = ndk.Year;
                 int month = ndk.Month;
-                int day = ndk.Day;
+                int day = ndk.Day; 
                 // Gửi email để thông báo                
                 string id_customer = simbll.getIDcustomer_in_Sim(txtMaSim.Text);
                 string email = customer.getEmail_in_Customer(txtMaKH.Text);

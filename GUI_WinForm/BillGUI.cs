@@ -149,7 +149,7 @@ namespace GUI_WinForm
             DateTime d2 = DateTime.Parse(txtNgayCat.Text);
             if (txtMaHD.Text == null || txtTinhTrang.Text == "Đã thanh toán")
             {
-                Print_MessageBox("Vui lòng chọn hóa đơn hợp lệ để cắt", "Kết quả");
+                Print_MessageBox("Hóa đơn này đã thanh toán, không được cắt!", "Kết quả");
             }
             else if (simbll.checkifLocked(txtMaSim.Text) == false)
             {
@@ -175,7 +175,7 @@ namespace GUI_WinForm
 
             }
             }
-            else Print_MessageBox("Chưa đủ ngày để có thể cắt hóa đơn!", "Kết quả");
+            else Print_MessageBox("Chưa đủ ngày để có thể cắt!", "Kết quả");
 
 
         }
@@ -276,9 +276,11 @@ namespace GUI_WinForm
             string id_customer = simbll.getIDcustomer_in_Sim(Id_SIM);
             string email = customer.getEmail_in_Customer(id_customer);
             string name_customer = customer.getName_in_Customer(id_customer);
+            string phone = simbll.getPhone_in_Customer(id_customer);
+            string address = customer.getAddress_in_Customer(id_customer);
 
-
-            billbll.SendBillByEmail1(email, name_customer, Id_SIM, date_export, invoice_date, date_cut, 50000, TotalFare + Convert.ToInt32(txtPhiThueBao.Text));
+            billbll.SendBillByEmail1(email, name_customer, phone, address, Id_SIM, date_export, invoice_date, date_cut, 50000, TotalFare + Convert.ToInt32(txtPhiThueBao.Text));
+            // Lưu vào database
             Print_MessageBox("Gửi mail thông báo việc đình chỉ sim thành công!", "Thông báo gửi");
         }
 
@@ -291,30 +293,5 @@ namespace GUI_WinForm
             frm.Show();
         }
 
-        private void btnTBDCTatCa_Click(object sender, EventArgs e)
-        {
-            var Id_SIM = txtMaSim.Text;
-            var date_export = new DateTime(Convert.ToDateTime(txtNgayLapPhieu.Text).Year, Convert.ToDateTime(txtNgayLapPhieu.Text).Day, Convert.ToDateTime(txtNgayLapPhieu.Text).Month);
-            var invoice_date = new DateTime(Convert.ToDateTime(txtInvoiceDate.Text).Year, Convert.ToDateTime(txtInvoiceDate.Text).Day, Convert.ToDateTime(txtInvoiceDate.Text).Month);
-            var date_cut = invoice_date.AddMonths(1);
-            var date_endUse = date_export.AddMonths(1);
-            var TotalFare = detailbll.GetFare(Id_SIM, date_export, date_endUse);
-            DateTime d1 = DateTime.Now.Date;
-            DateTime d2 = DateTime.Parse(txtNgayCat.Text);
-            // Gửi email để thông báo                
-            string id_customer = simbll.getIDcustomer_in_Sim(Id_SIM);
-            string email = customer.getEmail_in_Customer(id_customer);
-            string name_customer = customer.getName_in_Customer(id_customer);
-            for (int i = 0; i < dgvDSHD.Rows.Count; i++)
-            {
-                if ((d1 - d2).TotalDays >= 3) {
-               
-                    billbll.SendBillByEmail1(email, name_customer, Id_SIM, date_export, invoice_date, date_cut, 50000, TotalFare + Convert.ToInt32(txtPhiThueBao.Text));
-                    // Lưu vào database
-                    Print_MessageBox("Gửi thành công!", "Thông báo gửi");
-                }
-
-            }
-        }
     }
 }

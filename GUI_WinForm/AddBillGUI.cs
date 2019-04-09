@@ -73,9 +73,10 @@ namespace GUI_WinForm
                 string id_customer = sim.getIDcustomer_in_Sim(Id_SIM);
                 string email = customer.getEmail_in_Customer(id_customer);
                 string name_customer = customer.getName_in_Customer(id_customer);
-                
-                
-                    bill.SendBillByEmail(email, name_customer, Id_SIM, date_export, invoice_date, date_cut, 50000, TotalFare + Convert.ToInt32(txtPhiThueBao.Text));
+                string phone = sim.getPhone_in_Customer(id_customer);
+                string address = customer.getAddress_in_Customer(id_customer);
+
+                bill.SendBillByEmail(email, name_customer,phone, address, Id_SIM, date_export, invoice_date, date_cut, 50000, TotalFare + Convert.ToInt32(txtPhiThueBao.Text));
                 // Lưu vào database
                 
                     var result = bill.Create(Id_SIM, date_export, invoice_date, date_cut, Convert.ToInt32(txtPhiThueBao.Text), TotalFare + Convert.ToInt32(txtPhiThueBao.Text), false);

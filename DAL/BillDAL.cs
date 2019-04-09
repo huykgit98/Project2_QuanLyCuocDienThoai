@@ -115,7 +115,7 @@ namespace DAL
         }
 
         // Gửi thông báo cước phí hàng tháng cho khách hàng khi tạo bill
-        public bool SendBillByEmail(string toMail, string name_customer)
+        public bool SendBillByEmail(string toMail, string name_customer, string phone, string address)
         {
             MailMessage mail = new MailMessage("huykgit1998@gmail.com", toMail);
             SmtpClient client = new SmtpClient();
@@ -136,6 +136,11 @@ namespace DAL
 					        <strong>Kính gửi: " + name_customer + @"</strong>
 					        <br /> 
 				        </p>
+                        <p>
+					        <strong>Địa chỉ: " + address + @"</strong>
+					        <br /> 
+				        </p>
+                        
 			        </div>
 			        <div style='float:left; width:100%; padding: 2% 2%;'>
 				        <table style='border:3px solid #cc0000; width: 90%;'>
@@ -177,7 +182,7 @@ namespace DAL
             return true;
         }
         // Gửi thông báo cước phí hàng tháng cho khách hàng khi tạo bill
-        public bool SendBillByEmail1(string toMail, string name_customer)
+        public bool SendBillByEmail1(string toMail, string name_customer, string phone, string address)
         {
             MailMessage mail = new MailMessage("huykgit1998@gmail.com", toMail);
             SmtpClient client = new SmtpClient();
@@ -197,7 +202,11 @@ namespace DAL
 				        <p>
 					        <strong>Kính gửi: " + name_customer + @"</strong>
 					        <br /> 
+                        <p>
+					        <strong>Địa chỉ: " + address + @"</strong>
+					        <br /> 
 				        </p>
+                       
                         <p>
 					        Tháng vừa rồi anh/chị chưa thanh toán cước phí sử dụng dịch vụ, vui lòng thanh toán để k bị cắt sim!
 					        <br /> 

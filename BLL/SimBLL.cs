@@ -1,7 +1,7 @@
 ﻿using DAL;
 using WebMVC.Models;
 using System.Collections.Generic;
-
+using System;
 
 namespace BLL
 {
@@ -89,6 +89,12 @@ namespace BLL
         {
             sim_dal.setSim(id_sim, id_customer, status);
             sim_dal.Update_id_cus();
+        }
+
+        public string getPhone_in_Customer(string id_customer)
+        {
+            return sim_dal.getPhone_in_Customer(id_customer);
+
         }
 
         public List<SIM> SearchById_Sim(string id_sim)

@@ -121,6 +121,11 @@ namespace DAL
         {
             return (from h in db.CUSTOMERs where h.id.Equals(id_customer) select h.name_cus).FirstOrDefault();
         }
+       
+        public string getAddress_in_Customer(string id_customer)
+        {
+            return (from h in db.CUSTOMERs where h.id.Equals(id_customer) select h.address).FirstOrDefault();
+        }
         public string getEmail_in_Customer(string id_customer)
         {
             return (from h in db.CUSTOMERs where h.id.Equals(id_customer) select h.email).FirstOrDefault();

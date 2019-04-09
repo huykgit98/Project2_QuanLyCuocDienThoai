@@ -101,6 +101,11 @@ namespace DAL
             db.Entry(sim).State = EntityState.Detached;
         }
 
+        public string getPhone_in_Customer(string id_customer)
+        {
+            return (from h in db.SIMs where h.id.Equals(id_customer) select h.phone).FirstOrDefault();
+        }
+
         public void Update()
         {
             var edited_sim = db.SIMs.First(p => p.id == sim.id);

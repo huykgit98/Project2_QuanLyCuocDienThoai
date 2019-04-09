@@ -74,13 +74,13 @@ CREATE TABLE DETAIL(
 )
 GO
 INSERT INTO CUSTOMER VALUES ('KH01',N'Lâm Chấn Khang','025664871',N'Sinh Viên',N'Sinh Viên',N'Tầng 6, 123B Trần Đăng Ninh, P. Dịch Vọng, Q. Cầu Giấy, Hà Nội',N'huykg98@gmail.com');
-INSERT INTO CUSTOMER VALUES ('KH02',N'Đỗ Nam Trung','024357428',N'Kế Toán',N'Trưởng Kế Toán',N'189A Cống Quỳnh, phường Nguyễn Cư Trinh, Quận 1, TP. Hồ Chí Minh',N'huykg981@gmail.com');
-INSERT INTO CUSTOMER VALUES ('KH03',N'Đàm Vĩnh Hưng','02687488',N'Công Nghệ Thông Tin',N'Kỹ Thuật Phần Mềm',N'375- 377 Nguyễn Đình Chiểu, phường 5, Quận 3, TP. Hồ Chí Minh',N'huykg982@gmail.com');
-INSERT INTO CUSTOMER VALUES ('KH04',N'Châu Kiệt Luân','024258741',N'Quản Trị Kinh Doanh',N'Phó Phòng',N'58 Nguyễn Trãi, Phường 3, Quận 5, TP. Hồ Chí Minh',N'huykg983@gmail.com');
-INSERT INTO CUSTOMER VALUES ('KH05',N'Hari Won','025102485',N'Nội Trợ',N'Nội Trợ',N'478 Cách Mạng Tháng Tám, phường 11, Quận 3, TP. Hồ Chí Minh',N'huykg984@gmail.com');
-INSERT INTO CUSTOMER VALUES ('KH06',N'Trấn Thành','023542874',N'Bảo Vệ',N'Bảo Vệ',N'126 Hùng Vương, Quận 5, Quận 5, TP. Hồ Chí Minh',N'huykg985@gmail.com');
-INSERT INTO CUSTOMER VALUES ('KH07',N'Thành Long','024759863',N'Kiến Trúc Sư',N'Kiến Trúc Sư',N'286 Võ Văn Ngân, phường Bình Thọ, Quận Thủ Đức, TP. Hồ Chí Minh',N'huykg986@gmail.com');
-INSERT INTO CUSTOMER VALUES ('KH08',N'Ưng Đại Vệ','024351242',N'Thiết Kế',N'Thiết Kế',N'530 Lê Văn Sỹ, Phường 14, Quận 3, TP. Hồ Chí Minh',N'huykg987@gmail.com');
+INSERT INTO CUSTOMER VALUES ('KH02',N'Đỗ Nam Trung','024357428',N'Kế Toán',N'Trưởng Kế Toán',N'189A Cống Quỳnh, phường Nguyễn Cư Trinh, Quận 1, TP. Hồ Chí Minh',N'huykgit98@gmail.com');
+INSERT INTO CUSTOMER VALUES ('KH03',N'Đàm Vĩnh Hưng','02687488',N'Công Nghệ Thông Tin',N'Kỹ Thuật Phần Mềm',N'375- 377 Nguyễn Đình Chiểu, phường 5, Quận 3, TP. Hồ Chí Minh',N'nguyenhoanghuyp102@gmail.com');
+INSERT INTO CUSTOMER VALUES ('KH04',N'Châu Kiệt Luân','024258741',N'Quản Trị Kinh Doanh',N'Phó Phòng',N'58 Nguyễn Trãi, Phường 3, Quận 5, TP. Hồ Chí Minh',N'nguyenhoanghuyp102@gmail.com');
+INSERT INTO CUSTOMER VALUES ('KH05',N'Hari Won','025102485',N'Nội Trợ',N'Nội Trợ',N'478 Cách Mạng Tháng Tám, phường 11, Quận 3, TP. Hồ Chí Minh',N'huykgit98@gmail.com');
+INSERT INTO CUSTOMER VALUES ('KH06',N'Trấn Thành','023542874',N'Bảo Vệ',N'Bảo Vệ',N'126 Hùng Vương, Quận 5, Quận 5, TP. Hồ Chí Minh',N'huykg98@gmail.com');
+INSERT INTO CUSTOMER VALUES ('KH07',N'Thành Long','024759863',N'Kiến Trúc Sư',N'Kiến Trúc Sư',N'286 Võ Văn Ngân, phường Bình Thọ, Quận Thủ Đức, TP. Hồ Chí Minh',N'huykg98@gmail.com');
+INSERT INTO CUSTOMER VALUES ('KH08',N'Ưng Đại Vệ','024351242',N'Thiết Kế',N'Thiết Kế',N'530 Lê Văn Sỹ, Phường 14, Quận 3, TP. Hồ Chí Minh',N'huykg98@gmail.com');
 
 
 INSERT INTO SIM VALUES('S01','KH01','0923568741',1);
@@ -133,38 +133,3 @@ INSERT INTO FARE VALUES('DAY','7:00','23:00',200);
 INSERT INTO FARE VALUES('NIGHT','23:00','7:00',150);
 
 
-alter table SIM drop constraint [UQ__SIM__B43B145FF8AD8F8A];
-
-Alter table SIM alter column phone VARCHAR(10);
-INSERT INTO DETAIL VALUES('S01','6/12/2018 8:23','6/12/2018 9:21',58,0,61000);
-Delete from DETAIL
-Delete from SIM
-Delete from CONTRACT
-Delete from BILL
-DELETE FROM BILL;
-DELETE FROM CONTRACT;
-DELETE FROM DETAIL;
-DELETE FROM SIM;
-DELETE FROM CUSTOMER;
-DELETE FROM FARE;
-select * from SIM
-select * from BILL
-delete from BILL where id = 'B04'
-select * from DETAIL where id = 'S21'
-INSERT INTO SIM VALUES('S21',NULL,'0924711241',0);
-
-select BILL.id,SIM.phone, BILL.date_export, BILL.date_cut, BILL.postage, BILL.fare, BILL.status, CUSTOMER.name_cus, CUSTOMER.email from BILL, SIM, CUSTOMER where SIM.phone ='92356874'
-select BILL.id_sim,time_stop,minute_7hto23h,minute_23hto7h,DETAIL.fare from BILL, DETAIL where BILL.date_export >= '2/1/2019' and BILL.date_export <= '3/1/2019'  and BILL.id_sim ='S02' and BILL.id_sim=DETAIL.id_sim 
-
-/* lấy câu này */
-select DETAIL.id_sim,time_start, time_stop,minute_7hto23h,minute_23hto7h,DETAIL.fare from SIM,DETAIL where SIM.id = DETAIL.id_sim and (time_start between '2/1/2019' AND '3/1/2019')  and Sim.id='S02'
-
-select * from DETAIL where id_sim='S02' and (time_start between '1/1/2019' AND '2/1/2019')
-
-select * from BILL, SIM where BILL.id_sim = SIM.id and (BILL.date_export>='2/1/2019' and BILL.date_export <= '2/28/2019') 
-
-Select BILL.id_sim,time_stop,minute_7hto23h,minute_23hto7h,DETAIL.fare
-From BILL nv, SIM pb , DETAIL dt
-Where nv.id_sim=pb.id and pb.tenphong=N’ Hành Chính’ and nv.manv not in 
-(select nv1.manv From NhanVien nv1, ThamGia tg1, DuAn da1, LoaiDA lda1 
-Where nv1.manv=tg1.manv and tg1.mada=da1.mada and da1.maloaida=lda1.maloaida and lda1.tenloai=N’Giải pháp’) 3

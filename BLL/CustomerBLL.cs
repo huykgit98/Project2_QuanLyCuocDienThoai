@@ -70,5 +70,10 @@ namespace BLL
         {
             return customer_dal.getEmail_in_Customer(id_customer);
         }
+
+        public string getAddress_in_Customer(string id_customer)
+        {
+            return customer_dal.getAddress_in_Customer(id_customer);
+        }
     }
 }
