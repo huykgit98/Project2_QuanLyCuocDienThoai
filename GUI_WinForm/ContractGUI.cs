@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -161,8 +162,13 @@ namespace GUI_WinForm
         }
         private void edit()
         {
+            DateTime ndk = DateTime.ParseExact(txtNgayDangKy.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            int year = ndk.Year;
+            int month = ndk.Month;
+            int day = ndk.Day;
+            var ngayDangKy = new DateTime(year, month, day);
             bool status = true;
-            var ngayDangKy = DateTime.Parse(txtNgayDangKy.Text);
+        
             string id_customer = simbll.getIDcustomer_in_Sim(txtMaSim.Text);
             simbll.Update_ID_Customer(txtMaSim.Text, id_customer, true);
             if (rdbHuy.Checked==true)
@@ -176,7 +182,7 @@ namespace GUI_WinForm
             }
             else
             {
-                contractbll.Update(txtMaHopDong.Text, txtMaSim.Text, System.DateTime.Parse(txtNgayDangKy.Text), Convert.ToInt32(txtPhiDK.Text), status);
+                contractbll.Update(txtMaHopDong.Text, txtMaSim.Text, ngayDangKy, Convert.ToInt32(txtPhiDK.Text), status);
                 Print_MessageBox("Sửa thông tin khách hàng thành công", "Thông báo sửa");
                 dgvDSHD.DataSource = new BindingSource(contractbll.GetAll(), "");
             }

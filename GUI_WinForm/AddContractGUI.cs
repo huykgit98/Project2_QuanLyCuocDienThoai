@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,19 +51,34 @@ namespace GUI_WinForm
                 status = false;
             if (txtMaSim.Text != "")
             {
+                DateTime ndk = DateTime.ParseExact(txtNgayDK.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                int year = ndk.Year;
+                int month = ndk.Month;
+                int day = ndk.Day;
                 // Gửi email để thông báo                
                 string id_customer = simbll.getIDcustomer_in_Sim(txtMaSim.Text);
                 string email = customer.getEmail_in_Customer(txtMaKH.Text);
                 string name_customer = customer.getName_in_Customer(txtMaKH.Text);
-                var date_regis = new DateTime(Convert.ToDateTime(txtNgayDK.Text).Year, Convert.ToDateTime(txtNgayDK.Text).Day, Convert.ToDateTime(txtNgayDK.Text).Month);
+                var date_regis = new DateTime(year, month, day);
+                
+                if (date_regis > DateTime.Now.Date)
+                {
+                    Print_MessageBox("Ngày đăng ký không hợp lệ !", "Kết quả");
+                }
+                else if (txtMaKH.Text == "")
+                {
+                    Print_MessageBox("Mã KH trống !", "Kết quả");
+                }
+                else
+                {
+                    string result = contractbll.Create(txtMaSim.Text, date_regis, Convert.ToInt32(txtPhi.Text), status);
 
-
-                string result = contractbll.Create(txtMaSim.Text, Convert.ToDateTime(txtNgayDK.Text), Convert.ToInt32(txtPhi.Text), status);
-                simbll.Update_ID_Customer(txtMaSim.Text, txtMaKH.Text, status);
-                contractbll.SendContractByEmail(email, name_customer, txtMaSim.Text, date_regis, Convert.ToInt32(txtPhi.Text));
-                Print_MessageBox("Thêm hợp đồng thành công và đã gửi email đăng ký sim!", "Thông báo thêm");
-                dgvKH.DataSource = new BindingSource(customer.GetAll(), "");
-                dgvSim.DataSource = new BindingSource(simbll.GetAll(), "");
+                    simbll.Update_ID_Customer(txtMaSim.Text, txtMaKH.Text, status);
+                    contractbll.SendContractByEmail(email, name_customer, txtMaSim.Text, date_regis, Convert.ToInt32(txtPhi.Text));
+                    Print_MessageBox("Thêm hợp đồng thành công và đã gửi email đăng ký sim!", "Thông báo thêm");
+                    dgvKH.DataSource = new BindingSource(customer.GetAll(), "");
+                    dgvSim.DataSource = new BindingSource(simbll.GetAll(), "");
+                }
             }
             else Print_MessageBox("Mã sim trống !!", "Thông báo");
 
@@ -121,7 +137,7 @@ namespace GUI_WinForm
         public void Loadinfo()
         {
             DateTime d = DateTime.Now;
-            txtNgayDK.Text = d.ToString("MM/dd/yyyy");
+            txtNgayDK.Text = d.ToString("dd/MM/yyyy");
             rbtHoatDong.Checked = true;
         }
         private void Print_MessageBox(string StringMessage, string title)

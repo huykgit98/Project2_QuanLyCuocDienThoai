@@ -41,14 +41,24 @@ namespace GUI_WinForm
         // Function Thêm hóa đơn
         private void Add()
         {
+            if (txtMaSim.Text == "")
+            {
+                Print_MessageBox("Chưa chọn mã sim !", "Kết quả");
 
-            if (sim.checkifLocked(txtMaSim.Text) == false)
+            }
+            else if (sim.checkifLocked(txtMaSim.Text) == false)
             {
                 Print_MessageBox("SIM không hợp lệ và đã bị khóa ! Hãy chọn SIM khác ! ", "Kết quả");
             }
-            else if (Convert.ToDateTime(txtNgayLapPhieu.Text) > DateTime.Now.Date)
+           
+            else if(txtNgayLapPhieu.Text=="")
             {
-                Print_MessageBox("Ngày lập phiếu không hợp lệ !", "Kết quả");
+                Print_MessageBox("Kì sử dụng không hợp lệ !", "Kết quả");
+
+            }
+            else if ((Convert.ToDateTime(txtNgayLapPhieu.Text) > DateTime.Now.Date))
+            {
+                Print_MessageBox("kì sử dụng không hợp lệ !", "Kết quả");
             }
             else
             {
@@ -134,6 +144,12 @@ namespace GUI_WinForm
 
         private void txtNgayLapPhieu_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Add();
 
         }
     }

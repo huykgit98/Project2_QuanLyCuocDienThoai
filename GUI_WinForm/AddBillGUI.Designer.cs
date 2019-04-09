@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtInvoice_date = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.txtNgayLapPhieu = new System.Windows.Forms.TextBox();
             this.txtPhiThueBao = new System.Windows.Forms.TextBox();
@@ -39,8 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvAddBill = new System.Windows.Forms.DataGridView();
-            this.txtInvoice_date = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddBill)).BeginInit();
@@ -48,6 +49,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtInvoice_date);
             this.groupBox1.Controls.Add(this.btnRefresh);
@@ -64,6 +66,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hóa Đơn";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 108);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Ngày Lập:";
+            // 
+            // txtInvoice_date
+            // 
+            this.txtInvoice_date.Location = new System.Drawing.Point(103, 105);
+            this.txtInvoice_date.Name = "txtInvoice_date";
+            this.txtInvoice_date.Size = new System.Drawing.Size(245, 20);
+            this.txtInvoice_date.TabIndex = 10;
             // 
             // btnRefresh
             // 
@@ -100,7 +118,7 @@
             // 
             // btnThemVaDong
             // 
-            this.btnThemVaDong.Location = new System.Drawing.Point(117, 206);
+            this.btnThemVaDong.Location = new System.Drawing.Point(126, 206);
             this.btnThemVaDong.Name = "btnThemVaDong";
             this.btnThemVaDong.Size = new System.Drawing.Size(94, 23);
             this.btnThemVaDong.TabIndex = 4;
@@ -154,21 +172,15 @@
             this.dgvAddBill.TabIndex = 0;
             this.dgvAddBill.Click += new System.EventHandler(this.dgvAddBill_Click);
             // 
-            // txtInvoice_date
+            // button1
             // 
-            this.txtInvoice_date.Location = new System.Drawing.Point(103, 105);
-            this.txtInvoice_date.Name = "txtInvoice_date";
-            this.txtInvoice_date.Size = new System.Drawing.Size(245, 20);
-            this.txtInvoice_date.TabIndex = 10;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 108);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Ngày Lập:";
+            this.button1.Location = new System.Drawing.Point(12, 206);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Thêm";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AddBillGUI
             // 
@@ -203,5 +215,6 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtInvoice_date;
+        private System.Windows.Forms.Button button1;
     }
 }

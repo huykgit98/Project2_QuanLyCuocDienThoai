@@ -149,6 +149,7 @@
             // 
             this.txtNgayLapPhieu.Location = new System.Drawing.Point(130, 46);
             this.txtNgayLapPhieu.Name = "txtNgayLapPhieu";
+            this.txtNgayLapPhieu.ReadOnly = true;
             this.txtNgayLapPhieu.Size = new System.Drawing.Size(253, 20);
             this.txtNgayLapPhieu.TabIndex = 9;
             // 
@@ -156,6 +157,7 @@
             // 
             this.txtPhiThueBao.Location = new System.Drawing.Point(126, 84);
             this.txtPhiThueBao.Name = "txtPhiThueBao";
+            this.txtPhiThueBao.ReadOnly = true;
             this.txtPhiThueBao.Size = new System.Drawing.Size(253, 20);
             this.txtPhiThueBao.TabIndex = 10;
             // 
@@ -163,6 +165,7 @@
             // 
             this.txtCuocThang.Location = new System.Drawing.Point(126, 127);
             this.txtCuocThang.Name = "txtCuocThang";
+            this.txtCuocThang.ReadOnly = true;
             this.txtCuocThang.Size = new System.Drawing.Size(253, 20);
             this.txtCuocThang.TabIndex = 11;
             // 
@@ -178,6 +181,7 @@
             // 
             this.txtNgayCat.Location = new System.Drawing.Point(487, 49);
             this.txtNgayCat.Name = "txtNgayCat";
+            this.txtNgayCat.ReadOnly = true;
             this.txtNgayCat.Size = new System.Drawing.Size(253, 20);
             this.txtNgayCat.TabIndex = 13;
             // 
@@ -185,6 +189,7 @@
             // 
             this.txtPhutSuDung.Location = new System.Drawing.Point(487, 127);
             this.txtPhutSuDung.Name = "txtPhutSuDung";
+            this.txtPhutSuDung.ReadOnly = true;
             this.txtPhutSuDung.Size = new System.Drawing.Size(253, 20);
             this.txtPhutSuDung.TabIndex = 14;
             // 
@@ -192,6 +197,7 @@
             // 
             this.txtTinhTrang.Location = new System.Drawing.Point(487, 84);
             this.txtTinhTrang.Name = "txtTinhTrang";
+            this.txtTinhTrang.ReadOnly = true;
             this.txtTinhTrang.Size = new System.Drawing.Size(253, 20);
             this.txtTinhTrang.TabIndex = 15;
             // 
@@ -353,6 +359,7 @@
             // 
             this.txtInvoiceDate.Location = new System.Drawing.Point(126, 171);
             this.txtInvoiceDate.Name = "txtInvoiceDate";
+            this.txtInvoiceDate.ReadOnly = true;
             this.txtInvoiceDate.Size = new System.Drawing.Size(253, 20);
             this.txtInvoiceDate.TabIndex = 29;
             // 

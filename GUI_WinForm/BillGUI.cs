@@ -182,7 +182,7 @@ namespace GUI_WinForm
 
         private void clear()
         {
-            txtMaHD.Text = txtTinhTrang.Text = txtPhutSuDung.Text = txtNgayCat.Text = txtMaSim.Text = txtPhiThueBao.Text = txtNgayLapPhieu.Text = "";
+            txtMaHD.Text = txtTinhTrang.Text = txtPhutSuDung.Text = txtNgayCat.Text = txtMaSim.Text = txtPhiThueBao.Text = txtNgayLapPhieu.Text = txtCuocThang.Text=txtInvoiceDate.Text="";
         }
 
         // Function làm tươi danh sách
@@ -279,7 +279,7 @@ namespace GUI_WinForm
 
 
             billbll.SendBillByEmail1(email, name_customer, Id_SIM, date_export, invoice_date, date_cut, 50000, TotalFare + Convert.ToInt32(txtPhiThueBao.Text));
-            Print_MessageBox("Gửi thành công!", "Thông báo gửi");
+            Print_MessageBox("Gửi mail thông báo việc đình chỉ sim thành công!", "Thông báo gửi");
         }
 
         private void btnXemCTSD_Click(object sender, EventArgs e)
